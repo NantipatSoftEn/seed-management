@@ -1,7 +1,7 @@
 ---
 /* eslint max-lines: 'off' */
 
-import { asset, url } from '../lib/data.js';
+import { asset } from '../lib/data.js';
 import PictureUploader from '../components/PictureUploader.astro';
 import ToggleSwitch from '../components/ToggleSwitch.astro';
 ---
@@ -487,11 +487,24 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 		<div
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
-			<h3 class="mb-4 text-xl font-semibold dark:text-white">
-				General information
-			</h3>
+			<h3 class="mb-4 text-xl font-semibold dark:text-white">ข้อมูลทั่วไป</h3>
 			<form action="#">
 				<div class="grid grid-cols-6 gap-6">
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="first-name"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>Nick Name</label
+						>
+						<input
+							type="text"
+							name="nick-name"
+							id="nick-name"
+							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Bonnie"
+							required
+						/>
+					</div>
 					<div class="col-span-6 sm:col-span-3">
 						<label
 							for="first-name"
@@ -522,7 +535,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							required
 						/>
 					</div>
-					<div class="col-span-6 sm:col-span-3">
+					<!-- <div class="col-span-6 sm:col-span-3">
 						<label
 							for="country"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -536,8 +549,8 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							placeholder="United States"
 							required
 						/>
-					</div>
-					<div class="col-span-6 sm:col-span-3">
+					</div> -->
+					<!-- <div class="col-span-6 sm:col-span-3">
 						<label
 							for="city"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -551,7 +564,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							placeholder="e.g. San Francisco"
 							required
 						/>
-					</div>
+					</div> -->
 					<div class="col-span-6 sm:col-span-3">
 						<label
 							for="address"
@@ -612,52 +625,23 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							required
 						/>
 					</div>
+
 					<div class="col-span-6 sm:col-span-3">
 						<label
-							for="organization"
+							for="job"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-							>Organization</label
+							>อาชีพ</label
 						>
 						<input
 							type="text"
-							name="organization"
-							id="organization"
-							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="Company Name"
-							required
-						/>
-					</div>
-					<div class="col-span-6 sm:col-span-3">
-						<label
-							for="role"
-							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-							>Role</label
-						>
-						<input
-							type="text"
-							name="role"
-							id="role"
-							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="React Developer"
-							required
-						/>
-					</div>
-					<div class="col-span-6 sm:col-span-3">
-						<label
-							for="department"
-							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-							>Department</label
-						>
-						<input
-							type="text"
-							name="department"
-							id="department"
+							name="job"
+							id="job"
 							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 							placeholder="Development"
 							required
 						/>
 					</div>
-					<div class="col-span-6 sm:col-span-3">
+					<!-- <div class="col-span-6 sm:col-span-3">
 						<label
 							for="zip-code"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -671,7 +655,43 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							placeholder="123456"
 							required
 						/>
+					</div> -->
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="category"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>Personality</label
+						>
+						<select
+							id="personality"
+							name="personality"
+							class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							required
+						>
+							<option selected>Choose a personality</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select>
 					</div>
+				
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="number"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>ความสนใจ 3 อย่าง</label
+						>
+						<input
+							type="text"
+							id="interesting"
+							name="interesting"
+							class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="example เทคโนโลยี,การลงทุน,จิตวิทยา"
+							required
+						/>
+					</div>
+						
+				
 					<div class="col-span-6 sm:col-full">
 						<button
 							class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -682,6 +702,84 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 			</form>
 		</div>
 		<div
+			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
+		>
+			<h3 class="mb-4 text-xl font-semibold dark:text-white">
+				ข้อมูลฝ่ายวิญญาณ
+			</h3>
+			<form action="#">
+				<div class="grid grid-cols-6 gap-6">
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="mentor"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>พี่เลี้ยง</label
+						>
+						<input
+							type="text"
+							name="mentor"
+							id="mentor"
+							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Mentor"
+							required
+						/>
+					</div>
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="role"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>โบสก่อนหน้า</label
+						>
+						<input
+							type="text"
+							name="previous-chruch"
+							id="previous-chruch"
+							class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Seed Chruch"
+							required
+						/>
+					</div>
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="number"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>อายุความเชื่อในพระเจ้า</label
+						>
+						<input
+							type="number"
+							id="number"
+							name="number"
+							class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Enter a number"
+							required
+						/>
+					</div>
+					<div class="col-span-6 sm:col-span-3">
+						<label
+							for="number"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+							>หมายเหตุ</label
+						>
+						<input
+							type="text"
+							id="remark"
+							name="remark"
+							class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="บอกเล่าสถานการณ์"
+							required
+						/>
+					</div>
+					<div class="col-span-6 sm:col-full">
+						<button
+							class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+							type="submit">Save all</button
+						>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- <div
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
 			<h3 class="mb-4 text-xl font-semibold dark:text-white">
@@ -807,7 +905,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 					</div>
 				</div>
 			</form>
-		</div>
+		</div> -->
 		<div
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
