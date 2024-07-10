@@ -4,6 +4,9 @@
 import { asset } from '../lib/data.js';
 import PictureUploader from '../components/PictureUploader.astro';
 import ToggleSwitch from '../components/ToggleSwitch.astro';
+
+import LineLogo from '../assets/images/LINE_Brand_icon.png';
+import InstragramLogo from '../assets/images/Instagram_icon.png'
 ---
 
 <div
@@ -89,13 +92,13 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
 			<h3 class="mb-4 text-xl font-semibold dark:text-white">
-				Language & Time
+				 กลุ่มแคร์
 			</h3>
 			<div class="mb-4">
 				<label
 					for="settings-language"
 					class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-					>Select language</label
+					>เลือกกลุ่มแคร์</label
 				>
 				<select
 					id="settings-language"
@@ -115,7 +118,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 				<label
 					for="settings-timezone"
 					class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-					>Time Zone</label
+					>พี่เลี้ยง</label
 				>
 				<select
 					id="settings-timezone"
@@ -266,6 +269,70 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 					<li class="pt-4 pb-6">
 						<div class="flex items-center space-x-4">
 							<div class="flex-shrink-0">
+								<img
+									src={LineLogo}
+									height="25"
+									width="25"
+									alt="LineLogo"
+								/>
+							</div>
+
+							<div class="flex-1 min-w-0">
+								<span
+									class="block text-base font-semibold text-gray-900 truncate dark:text-white"
+								>
+									LINE
+								</span>
+								<span
+									class="block text-sm font-normal text-gray-500 truncate dark:text-gray-400"
+								>
+									Not connected
+								</span>
+							</div>
+							<div class="inline-flex items-center">
+								<a
+									href="#"
+									class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+									>Connect</a
+								>
+							</div>
+						</div>
+					</li>
+					<li class="pt-4 pb-6">
+						<div class="flex items-center space-x-4">
+							<div class="flex-shrink-0">
+								<img
+									src={InstragramLogo}
+									height="25"
+									width="25"
+									alt="InstragramLogo"
+								/>
+							</div>
+
+							<div class="flex-1 min-w-0">
+								<span
+									class="block text-base font-semibold text-gray-900 truncate dark:text-white"
+								>
+									LINE
+								</span>
+								<span
+									class="block text-sm font-normal text-gray-500 truncate dark:text-gray-400"
+								>
+									Not connected
+								</span>
+							</div>
+							<div class="inline-flex items-center">
+								<a
+									href="#"
+									class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+									>Connect</a
+								>
+							</div>
+						</div>
+					</li>
+					<li class="pt-4 pb-6">
+						<div class="flex items-center space-x-4">
+							<div class="flex-shrink-0">
 								<svg
 									class="w-5 h-5 dark:text-white"
 									aria-hidden="true"
@@ -281,6 +348,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 									></path></svg
 								>
 							</div>
+
 							<div class="flex-1 min-w-0">
 								<span
 									class="block text-base font-semibold text-gray-900 truncate dark:text-white"
@@ -315,7 +383,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
 			<div class="flow-root">
-				<h3 class="text-xl font-semibold dark:text-white">Other accounts</h3>
+				<h3 class="text-xl font-semibold dark:text-white">ลูกแกะ</h3>
 				<ul class="mb-6 divide-y divide-gray-200 dark:divide-gray-700">
 					<li class="py-4">
 						<div
@@ -674,7 +742,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							<option value="3">Option 3</option>
 						</select>
 					</div>
-				
+
 					<div class="col-span-6 sm:col-span-3">
 						<label
 							for="number"
@@ -690,8 +758,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							required
 						/>
 					</div>
-						
-				
+
 					<div class="col-span-6 sm:col-full">
 						<button
 							class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -709,7 +776,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 			</h3>
 			<form action="#">
 				<div class="grid grid-cols-6 gap-6">
-					<div class="col-span-6 sm:col-span-3">
+					<!-- <div class="col-span-6 sm:col-span-3">
 						<label
 							for="mentor"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -723,7 +790,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 							placeholder="Mentor"
 							required
 						/>
-					</div>
+					</div> -->
 					<div class="col-span-6 sm:col-span-3">
 						<label
 							for="role"
@@ -779,7 +846,7 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 			</form>
 		</div>
 
-		<!-- <div
+		<div
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
 			<h3 class="mb-4 text-xl font-semibold dark:text-white">
@@ -905,12 +972,14 @@ import ToggleSwitch from '../components/ToggleSwitch.astro';
 					</div>
 				</div>
 			</form>
-		</div> -->
+		</div>
 		<div
 			class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
 		>
 			<div class="flow-root">
-				<h3 class="text-xl font-semibold dark:text-white">Sessions</h3>
+				<h3 class="text-xl font-semibold dark:text-white">
+					บันทึกการมาคริสจักร
+				</h3>
 				<ul class="divide-y divide-gray-200 dark:divide-gray-700">
 					<li class="py-4">
 						<div class="flex items-center space-x-4">
