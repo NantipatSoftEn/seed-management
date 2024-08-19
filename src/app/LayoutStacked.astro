@@ -1,22 +1,23 @@
 ---
-import FooterStacked from './FooterStacked.astro';
-import LayoutCommon from './LayoutCommon.astro';
-import NavBarStacked from './NavBarStacked.astro';
+import FooterStacked from './FooterStacked.astro'
+import LayoutCommon from './LayoutCommon.astro'
+import NavBarStacked from './NavBarStacked.astro'
+
+const fuck: string = 'FUCK'
 ---
 
 <LayoutCommon>
-	<NavBarStacked />
-
-	<div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
-		<div
-			id="main-content"
-			class="relative w-full max-w-screen-2xl mx-auto h-full overflow-y-auto bg-gray-50 dark:bg-gray-900 min-h-screen"
-		>
-			<div class="px-4 pt-6 2xl:px-0">
-				<slot />
-			</div>
-
-			<FooterStacked />
-		</div>
-	</div>
+  <NavBarStacked />
+  <div class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">
+    <div
+      id="main-content"
+      class="relative mx-auto h-full min-h-screen w-full max-w-screen-2xl overflow-y-auto bg-gray-50 dark:bg-gray-900"
+    >
+      <div class="px-4 pt-6 2xl:px-0">
+        <slot />
+      </div>
+      {fuck}
+      <FooterStacked />
+    </div>
+  </div>
 </LayoutCommon>
