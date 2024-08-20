@@ -267,12 +267,12 @@ const users = await fetchData('users')
                 >
                   Country
                 </th>
-                <th
+                <!-- <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
                   Status
-                </th>
+                </th> -->
                 <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
@@ -304,28 +304,28 @@ const users = await fetchData('users')
                       <td class="mr-12 flex items-center space-x-6 whitespace-nowrap p-4">
                         <img
                           class="h-10 w-10 rounded-full"
-                          src={asset(`/images/users/${user.avatar}`)}
-                          alt={`${user.name} avatar`}
+                          src={asset(`/images/users/${user.ProfilePicture}`)}
+                          alt={`${user.NickName} avatar`}
                         />
                         <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
                           <div class="text-base font-semibold text-gray-900 dark:text-white">
-                            {user.name}
+                            {user.NickName}
                           </div>
                           <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                            {user.email}
+                            {user.FirstName} {user.LastName}
                           </div>
                         </div>
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-500 dark:text-gray-400 xl:max-w-xs">
-                        {user.biography}
+                        {user.Interests}
                       </td>
                       <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
-                        {user.position}
+                        {user.Job}
                       </td>
                       <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
-                        {user.country}
+                        {user.Address}
                       </td>
-                      <td class="whitespace-nowrap p-4 text-base font-normal text-gray-900 dark:text-white">
+                      {/* <td class="whitespace-nowrap p-4 text-base font-normal text-gray-900 dark:text-white">
                         <div class="flex items-center">
                           {user.status === 'Active' ? (
                             <div class="mr-2 h-2.5 w-2.5 rounded-full bg-green-400" />
@@ -334,7 +334,7 @@ const users = await fetchData('users')
                           )}
                           {user.status}
                         </div>
-                      </td>
+                      </td> */}
                       <td class="space-x-2 whitespace-nowrap p-4">
                         <button
                           type="button"
