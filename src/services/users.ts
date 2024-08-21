@@ -12,10 +12,10 @@ export function getUsers(randomize = RANDOMIZE) {
 
   const result = randomize
     ? usersStaticData.map(p => {
-        p.FirstName = faker.name.fullName()
-        p.Email = faker.internet.email()
-        p.Job = faker.name.jobTitle()
-        p.Address = faker.address.country()
+        p.name = faker.name.fullName()
+        p.email = faker.internet.email()
+        p.position = faker.name.jobTitle()
+        p.country = faker.address.country()
         return p
       })
     : usersStaticData

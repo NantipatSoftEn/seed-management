@@ -3,8 +3,10 @@ import LayoutSidebar from '../../app/LayoutSidebar.astro'
 import UserSettings from '../../modules/UserSettings.astro'
 import type { APIRoute } from 'astro'
 const { id } = Astro.params
+
+
 ---
 
 <LayoutSidebar>
-  <UserSettings />
+  <UserSettings id={id} />
 </LayoutSidebar>
