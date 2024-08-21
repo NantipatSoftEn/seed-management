@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "profilePicture": "https://example.com/images/profile1.jpg",
+    "profilePicture": "neil-sims.png",
     "nickName": "Lambie",
     "firstName": "John",
     "lastName": "Doe",
@@ -24,7 +24,7 @@
   },
   {
     "id": 2,
-    "profilePicture": null,
+    "profilePicture": "roberta-casas.png",
     "nickName": null,
     "firstName": "Jane",
     "lastName": "Smith",
@@ -47,7 +47,7 @@
   },
   {
     "id": 3,
-    "profilePicture": "https://example.com/images/profile3.jpg",
+    "profilePicture": "jese-leos.png",
     "nickName": "Smarty",
     "firstName": "Alice",
     "lastName": "Johnson",
