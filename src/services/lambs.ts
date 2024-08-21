@@ -9,7 +9,7 @@ export function getLambs(randomize = RANDOMIZE) {
 
   const result = randomize
     ? lambStaticJSON.map(p => {
-        p.nickName = faker.name.fullName()
+        // p.nickName = faker.name.fullName()
         return p
       })
     : lambStaticJSON

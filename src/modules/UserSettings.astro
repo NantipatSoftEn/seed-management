@@ -7,8 +7,12 @@ import PictureUploader from '../components/PictureUploader.astro'
 
 import LineLogo from '../assets/images/LINE_Brand_icon.png'
 import InstragramLogo from '../assets/images/Instagram_icon.png'
+import { fetchData } from 'src/lib/data'
 const { id } = Astro.props
-console.log("id",id)
+console.log("id",typeof id)
+const lambs = await fetchData('lambs')
+const lamb = lambs.find((lamb) => lamb.id == id)
+console.log("lamb",lamb)
 ---
 
 <div
@@ -564,7 +568,8 @@ console.log("id",id)
               name="nick-name"
               id="nick-name"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
-              placeholder="Bonnie"
+              placeholder=""
+							value={lamb?.nickName}
               required
             />
           </div>
@@ -580,6 +585,7 @@ console.log("id",id)
               id="first-name"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Bonnie"
+							value={lamb?.firstName}
               required
             />
           </div>
@@ -595,6 +601,7 @@ console.log("id",id)
               id="last-name"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Green"
+							value={lamb?.lastName}
               required
             />
           </div>
@@ -640,6 +647,7 @@ console.log("id",id)
               id="address"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="e.g. California"
+							value={lamb?.address}
               required
             />
           </div>
@@ -655,6 +663,7 @@ console.log("id",id)
               id="email"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="example@company.com"
+							value={lamb?.email}
               required
             />
           </div>
@@ -670,6 +679,7 @@ console.log("id",id)
               id="phone-number"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="e.g. +(12)3456 789"
+							value={lamb?.phoneNumber}
               required
             />
           </div>
@@ -685,6 +695,7 @@ console.log("id",id)
               id="birthday"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="15/08/1990"
+							value={lamb?.birthday}
               required
             />
           </div>
@@ -701,6 +712,7 @@ console.log("id",id)
               id="job"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Development"
+							value={lamb?.job}
               required
             />
           </div>
@@ -729,6 +741,7 @@ console.log("id",id)
               id="personality"
               name="personality"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
+							value={lamb?.personality}
               required
             >
               <option selected>Choose a personality</option>
@@ -750,6 +763,7 @@ console.log("id",id)
               name="interesting"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="example เทคโนโลยี,การลงทุน,จิตวิทยา"
+							value={lamb?.interests}
               required
             />
           </div>
@@ -797,7 +811,8 @@ console.log("id",id)
               name="previous-chruch"
               id="previous-chruch"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
-              placeholder="Seed Chruch"
+              placeholder="Seed Chruch"]
+							value={lamb?.religiousInfo?.previousChurch}
               required
             />
           </div>
@@ -813,6 +828,7 @@ console.log("id",id)
               name="number"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Enter a number"
+							value={lamb?.religiousInfo?.age}
               required
             />
           </div>
@@ -828,6 +844,7 @@ console.log("id",id)
               name="remark"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="บอกเล่าสถานการณ์"
+							value={lamb?.religiousInfo?.remark}
               required
             />
           </div>

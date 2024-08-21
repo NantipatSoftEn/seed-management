@@ -13,13 +13,13 @@
     "job": "Software Developer",
     "interests": "Coding, Hiking, Photography",
     "SocialAccounts": {
-      "PlatformName": "Twitter",
+      "platformName": "Twitter",
       "URL": "https://twitter.com/johndoe"
     },
-    "ReligiousInfo": {
-      "PreviousChurch": "Grace Church",
-      "Age": 30.5,
-      "Remark": "Active member"
+    "religiousInfo": {
+      "previousChurch": "Grace Church",
+      "age": 30.5,
+      "remark": "Active member"
     }
   },
   {
@@ -35,14 +35,14 @@
     "phoneNumber": null,
     "job": null,
     "interests": null,
-    "SocialAccounts": {
-      "PlatformName": null,
+    "socialAccounts": {
+      "platformName": null,
       "URL": null
     },
-    "ReligiousInfo": {
-      "PreviousChurch": null,
-      "Age": null,
-      "Remark": null
+    "religiousInfo": {
+      "previousChurch": null,
+      "age": null,
+      "remark": null
     }
   },
   {
@@ -58,14 +58,14 @@
     "phoneNumber": "+0987654321",
     "job": "Data Scientist",
     "interests": "Reading, Chess, AI",
-    "SocialAccounts": {
-      "PlatformName": "LinkedIn",
+    "socialAccounts": {
+      "platformName": "LinkedIn",
       "URL": "https://linkedin.com/in/alicejohnson"
     },
-    "ReligiousInfo": {
-      "PreviousChurch": "Community Church",
+    "religiousInfo": {
+      "previousChurch": "Community Church",
       "Age": 39.8,
-      "Remark": "Occasional visitor"
+      "remark": "Occasional visitor"
     }
   }
 ]

@@ -1,10 +1,11 @@
 ---
 /* eslint max-lines: 'off' */
 
+import HeaderLink from '$components/HeaderLink.astro'
 import NavPagination from '../components/NavPagination.astro'
-import { asset, fetchData } from '../lib/data.js'
+import { asset, fetchData, url } from '../lib/data.js'
 
-const { class: clazz,id } = Astro.props
+const { class: clazz } = Astro.props
 const lambs = await fetchData('lambs')
 
 ---
@@ -337,7 +338,7 @@ const lambs = await fetchData('lambs')
                         </div>
                       </td> */}
                       <td class="space-x-2 whitespace-nowrap p-4">
-                        <a href="/your-path">
+												<HeaderLink href={url(`settings/${user.id}`)}>
                           <button
                             type="button"
                             class="inline-flex items-center rounded-lg bg-primary-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -359,7 +360,7 @@ const lambs = await fetchData('lambs')
                             </svg>
                             Edit user 2
                           </button>
-                        </a>
+                        </HeaderLink>
                         <button
                           type="button"
                           data-modal-target="edit-user-modal"

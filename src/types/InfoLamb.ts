@@ -12,20 +12,20 @@ interface Lamb {
   job: string | null
   interests: string | null
 
-	SocialAccounts:SocialAccounts
-	ReligiousInfo:ReligiousInfo
+	socialAccounts:SocialAccounts
+	religiousInfo:ReligiousInfo
 }
 
 
 // Interface for the SocialAccounts table
 interface SocialAccounts {
-  PlatformName: string | null
+  platformName: string | null
   URL: string | null
 }
 
 // Interface for the ReligiousInfo table
 interface ReligiousInfo {
-  PreviousChurch: string | null
-  Age: number | null // DECIMAL(10, 2) could be a number
-  Remark: string | null
+  previousChurch: string | null
+  age: number | null // DECIMAL(10, 2) could be a number
+  remark: string | null
 }
