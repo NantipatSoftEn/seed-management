@@ -4,8 +4,9 @@
 import NavPagination from '../components/NavPagination.astro'
 import { asset, fetchData } from '../lib/data.js'
 
-const { class: clazz } = Astro.props
+const { class: clazz,id } = Astro.props
 const lambs = await fetchData('lambs')
+
 ---
 
 <entities-crud
@@ -80,7 +81,7 @@ const lambs = await fetchData('lambs')
         <h1
           class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl"
         >
-          All users
+          All Lambs
         </h1>
       </div>
       <div class="sm:flex">
@@ -253,13 +254,13 @@ const lambs = await fetchData('lambs')
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
-                  Biography
+                  Interesting
                 </th>
                 <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
-                  Position
+                  job
                 </th>
                 <th
                   scope="col"
@@ -312,13 +313,13 @@ const lambs = await fetchData('lambs')
                             {user.nickName}
                           </div>
                           <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                            {user.email}
+                            {user.nickName}
                           </div>
                         </div>
                       </td>
-                      {/* <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-500 dark:text-gray-400 xl:max-w-xs">
-                        {user.biography}
-                      </td> */}
+                      <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-500 dark:text-gray-400 xl:max-w-xs">
+                        {user.interests}
+                      </td>
                       <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                         {user.job}
                       </td>

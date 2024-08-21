@@ -6,7 +6,7 @@ import * as operations from '../../services/index.js'
 export const endpointsToOperations = {
   products: operations.getProducts,
   users: operations.getUsers,
-	lambs:  operations.getLamb
+	lambs:  operations.getLambs
 }
 
 function parseTypeParam(endpoint: string | undefined) {

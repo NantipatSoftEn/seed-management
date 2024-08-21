@@ -4,8 +4,8 @@ import { RANDOMIZE } from '../app/constants.js'
 
 import lambStaticJSON from '../../data/lambs.json' assert { type: 'json' }
 
-export function getLamb(randomize = RANDOMIZE) {
-  console.log('getUsers')
+export function getLambs(randomize = RANDOMIZE) {
+  console.log('getLambs')
 
   const result = randomize
     ? lambStaticJSON.map(p => {
