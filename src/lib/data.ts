@@ -10,7 +10,7 @@ export async function fetchData<Selected extends Endpoint>(endpoint: Selected): 
   console.info(`Fetching ${apiEndpoint}…`)
   return fetch(apiEndpoint)
     .then(
-      r =>
+      r => 
         r.json() as unknown as Promise<
           ReturnType<EndpointsToOperations[Selected]>
         >
@@ -23,11 +23,13 @@ export async function fetchData<Selected extends Endpoint>(endpoint: Selected): 
 
 // NOTE: These helpers are useful for unifying paths, app-wide
 export function url(path = '') {
+	console.log("url",import.meta.env.SITE)
   return `${import.meta.env.SITE}${import.meta.env.BASE_URL}${path}`
 }
 
 // TODO: Remove old local assets from git history (to make cloning snappier).
 export function asset(path: string) {
   // NOTE: Fetching remote assets from the Hugo admin dashboard Vercel dist.
+	console.log("asset",`${REMOTE_ASSETS_BASE_URL}/${path}`)
   return `${REMOTE_ASSETS_BASE_URL}/${path}`
 }

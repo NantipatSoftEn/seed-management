@@ -6,7 +6,8 @@ import { asset } from '../lib/data.js'
 import ColorModeSwitcher from '../components/ColorModeSwitcher.astro'
 import GitHubButton from '../components/GitHubButton.astro'
 import SearchInput from '../components/SearchInput.astro'
-import SeedLogo from '../assets/images/SEED_CHURCH_LOGO.png'
+import SeedLogo from '/SEED_CHURCH_LOGO.png'
+
 ---
 
 <nav
@@ -46,9 +47,9 @@ import SeedLogo from '../assets/images/SEED_CHURCH_LOGO.png'
         </button>
         <a href="/" class="ml-2 flex md:mr-24">
           <img
-            src={SeedLogo}
+            src={(new URL(SeedLogo, Astro.url)).toString()}
             class="mr-3 h-8"
-            alt="FlowBite Logo"
+            alt="Seed Logo"
           />
           <span
             class="self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl"
@@ -156,11 +157,11 @@ import SeedLogo from '../assets/images/SEED_CHURCH_LOGO.png'
               class="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
             >
               <div class="flex-shrink-0">
-                <img
+                <!-- <img
                   class="h-11 w-11 rounded-full"
                   src={asset('images/users/bonnie-green.png')}
                   alt="Jese image"
-                />
+                /> -->
                 <div
                   class="absolute -mt-5 ml-6 flex h-5 w-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700"
                 >
@@ -198,11 +199,11 @@ import SeedLogo from '../assets/images/SEED_CHURCH_LOGO.png'
               class="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
             >
               <div class="flex-shrink-0">
-                <img
+                <!-- <img
                   class="h-11 w-11 rounded-full"
                   src={asset('images/users/jese-leos.png')}
                   alt="Jese image"
-                />
+                /> -->
                 <div
                   class="absolute -mt-5 ml-6 flex h-5 w-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700"
                 >
@@ -239,11 +240,11 @@ import SeedLogo from '../assets/images/SEED_CHURCH_LOGO.png'
               class="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
             >
               <div class="flex-shrink-0">
-                <img
+                <!-- <img
                   class="h-11 w-11 rounded-full"
                   src={asset('images/users/joseph-mcfall.png')}
                   alt="Joseph image"
-                />
+                /> -->
                 <div
                   class="absolute -mt-5 ml-6 flex h-5 w-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700"
                 >
@@ -324,11 +325,11 @@ import SeedLogo from '../assets/images/SEED_CHURCH_LOGO.png'
               class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
             >
               <div class="flex-shrink-0">
-                <img
+                <!-- <img
                   class="h-11 w-11 rounded-full"
                   src={asset('images/users/robert-brown.png')}
                   alt="Robert image"
-                />
+                /> -->
                 <div
                   class="absolute -mt-5 ml-6 flex h-5 w-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700"
                 >
