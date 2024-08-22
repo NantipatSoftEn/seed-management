@@ -1,12 +1,8 @@
 ---
-/* eslint max-lines: 'off' */
-
 // import { asset } from '../lib/data.js'
 import PictureUploader from '../components/PictureUploader.astro'
 // import ToggleSwitch from '../components/ToggleSwitch.astro'
 
-import LineLogo from '../assets/images/LINE_Brand_icon.png'
-import InstragramLogo from '../assets/images/Instagram_icon.png'
 import { fetchData } from 'src/lib/data'
 import { personalityType } from '$constants/personalityType'
 const { id } = Astro.props
@@ -15,7 +11,7 @@ const lambs = await fetchData('lambs') as Lamb[]
 // console.log("lambs",lambs)
 const lamb: Lamb | null = lambs.find(lamb => lamb.id == id) || null;
 // console.log("lamb",lamb)
-const profilePicture = `/src/assets/persons/${lamb?.profilePicture}`;
+const profilePicture = `/persons/${lamb?.profilePicture}`;
 
 ---
 
@@ -248,7 +244,7 @@ const profilePicture = `/src/assets/persons/${lamb?.profilePicture}`;
           <li class="pb-6 pt-4">
             <div class="flex items-center space-x-4">
               <div class="flex-shrink-0">
-                <img src={LineLogo} height="25" width="25" alt="LineLogo" />
+                <img src="/images/LINE_Brand_icon.png" height="25" width="25" alt="LineLogo" />
               </div>
 
               <div class="min-w-0 flex-1">
@@ -277,7 +273,7 @@ const profilePicture = `/src/assets/persons/${lamb?.profilePicture}`;
             <div class="flex items-center space-x-4">
               <div class="flex-shrink-0">
                 <img
-                  src={InstragramLogo}
+                  src="/images/Instagram_icon.png"
                   height="25"
                   width="25"
                   alt="InstragramLogo"

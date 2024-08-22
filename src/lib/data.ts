@@ -4,10 +4,9 @@
 import { API_URL, REMOTE_ASSETS_BASE_URL } from '../app/constants.js'
 import type { Endpoint, EndpointsToOperations } from '../types/entities.js'
 
-export async function fetchData<Selected extends Endpoint>(endpoint: Selected): Promise<ReturnType<EndpointsToOperations[Selected]>> {
+export async function fetchData<Selected extends Endpoint>(endpoint: Selected) {
   const apiEndpoint = `${API_URL}${endpoint}`
-
-  console.info(`Fetching ${apiEndpoint}…`)
+  console.info(`Fetching ${apiEndpoint}`)
   return fetch(apiEndpoint)
     .then(
       r => 
@@ -23,7 +22,7 @@ export async function fetchData<Selected extends Endpoint>(endpoint: Selected): 
 
 // NOTE: These helpers are useful for unifying paths, app-wide
 export function url(path = '') {
-	console.log("url",import.meta.env.SITE)
+	// console.log("url",import.meta.env.SITE)
   return `${import.meta.env.SITE}${import.meta.env.BASE_URL}${path}`
 }
 
