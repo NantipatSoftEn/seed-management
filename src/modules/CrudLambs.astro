@@ -4,10 +4,8 @@
 import HeaderLink from '$components/HeaderLink.astro'
 import NavPagination from '../components/NavPagination.astro'
 import { asset, fetchData, url } from '../lib/data.js'
-
 const { class: clazz } = Astro.props
-const lambs = await fetchData('lambs')
-
+const lambs:Lamb[] = await fetchData('lambs') || []
 ---
 
 <entities-crud
@@ -255,6 +253,18 @@ const lambs = await fetchData('lambs')
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
+                  Mentor
+                </th>
+                <th
+                  scope="col"
+                  class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
+                >
+                  กลุ่มแคร์
+                </th>
+                <th
+                  scope="col"
+                  class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
+                >
                   Interesting
                 </th>
                 <th
@@ -305,20 +315,26 @@ const lambs = await fetchData('lambs')
                       </td>
                       <td class="mr-12 flex items-center space-x-6 whitespace-nowrap p-4">
                         <img
-                          class="h-10 w-10 rounded-full"
-                          src={asset(`/images/users/${user.profilePicture}`)}
+                          class="h-32 w-32 rounded-full"
+                          src={`/src/assets/persons/${user.profilePicture}`}
                           alt={`${user.nickName} avatar`}
                         />
                         <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
                           <div class="text-base font-semibold text-gray-900 dark:text-white">
-                            {user.nickName}
+                            {user.firstName} {user.lastName}
                           </div>
                           <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
                             {user.nickName}
                           </div>
                         </div>
                       </td>
-                      <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-500 dark:text-gray-400 xl:max-w-xs">
+											<td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
+                        {user.religiousInfo.mentor }
+                      </td>
+											<td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
+                        {user.religiousInfo.groupCare }
+                      </td>
+                      <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
                         {user.interests}
                       </td>
                       <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
@@ -338,7 +354,7 @@ const lambs = await fetchData('lambs')
                         </div>
                       </td> */}
                       <td class="space-x-2 whitespace-nowrap p-4">
-												<HeaderLink href={url(`settings/${user.id}`)}>
+                        <HeaderLink href={url(`settings/${user.id}`)}>
                           <button
                             type="button"
                             class="inline-flex items-center rounded-lg bg-primary-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -358,7 +374,7 @@ const lambs = await fetchData('lambs')
                                 />
                               </>
                             </svg>
-                            Edit user 
+                            Edit user 2
                           </button>
                         </HeaderLink>
                         {/* <button

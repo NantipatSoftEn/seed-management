@@ -10,9 +10,13 @@ import InstragramLogo from '../assets/images/Instagram_icon.png'
 import { fetchData } from 'src/lib/data'
 import { personalityType } from '$constants/personalityType'
 const { id } = Astro.props
-// console.log("id",typeof id)
+// console.log("id", id)
 const lambs = await fetchData('lambs') as Lamb[]
-const lamb: Lamb | null = lambs.find(lamb => lamb.id === id) || null;
+// console.log("lambs",lambs)
+const lamb: Lamb | null = lambs.find(lamb => lamb.id == id) || null;
+// console.log("lamb",lamb)
+const profilePicture = `/src/assets/persons/${lamb?.profilePicture}`;
+
 ---
 
 <div
@@ -91,7 +95,7 @@ const lamb: Lamb | null = lambs.find(lamb => lamb.id === id) || null;
       <div
         class="items-center sm:flex sm:space-x-4 xl:block xl:space-x-0 2xl:flex 2xl:space-x-4"
       >
-        <PictureUploader title="Profile picture" />
+        <PictureUploader title="Profile picture"  profilePicture={profilePicture}/>
       </div>
     </div>
     <!-- <div

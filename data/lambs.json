@@ -1,44 +1,44 @@
 [
   {
     "id": 1,
-    "profilePicture": "neil-sims.png",
-    "nickName": "Lambie",
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
+    "profilePicture": "fluck.png",
+    "nickName": "ฟลุ้ค",
+    "firstName": "ฟลุ้คกี้ขี่ม้าขาว",
+    "lastName": "ชมดาว",
+    "email": "fluck.@jesus.com",
     "birthday": "1990-01-15",
-    "personality": "ISTP",
-    "address": "123 Main St, Springfield, USA",
+    "personality": "ESTJ",
+    "address": "บางหว้า,กรุงเทพ",
     "phoneNumber": "+1234567890",
-    "job": "Software Developer",
-    "interests": "Coding, Hiking, Photography",
+    "job": "นักศึกษา",
+    "interests": "เดียวไมค์โครโฟน",
     "socialAccounts": {
-      "facebook": "fb.com/haha55",
-      "line": "line.sdsas",
+      "facebook": "fb.com/fluck",
+      "line": "line.fluck",
       "instagram": "ig.bo",
-      "twitter": "twitter/bonus"
+      "twitter": "twitter/fluck"
     },
     "religiousInfo": {
-      "mentor": "bonus",
-      "groupCare": "นนทบุรี",
-      "previousChurch": "Grace Church",
-      "age": 30.5,
-      "remark": "Active member"
+      "mentor": "namwan",
+      "groupCare": "ราชเทวี",
+      "previousChurch": "seed city phuket",
+      "age": 5,
+      "remark": "ไม่มีอะไรน่าเป็นห่วง"
     }
   },
   {
     "id": 2,
-    "profilePicture": "roberta-casas.png",
-    "nickName": "testmaN",
-    "firstName": "Jane",
-    "lastName": "Smith",
-    "email": "jane.smith@example.com",
-    "birthday": null,
-    "personality": "INFP",
-    "address": null,
-    "phoneNumber": null,
-    "job": null,
-    "interests": null,
+    "profilePicture": "bonus.png",
+    "nickName": "โบนัส",
+    "firstName": "เอกมณี",
+    "lastName": "มีชาเขียว",
+    "email": "bonus777@example.com",
+    "birthday": "1990-01-15",
+    "personality": "INFJ",
+    "address": "นนทบุรี",
+    "phoneNumber": "191",
+    "job": "เทคนิคการแพทย์",
+    "interests": "นิยาย",
     "socialAccounts": {
       "facebook": "fb.com/haha55",
       "line": "line.sdsas",
@@ -48,36 +48,90 @@
     "religiousInfo": {
       "mentor": "bonus",
       "groupCare": "นนทบุรี",
-      "previousChurch": null,
+      "previousChurch": "",
       "age": null,
       "remark": null
     }
   },
   {
     "id": 3,
-    "profilePicture": "jese-leos.png",
-    "nickName": "Smarty",
-    "firstName": "Alice",
-    "lastName": "Johnson",
-    "email": "alice.johnson@example.com",
+    "profilePicture": "bo.png",
+    "nickName": "bo",
+    "firstName": "ศุภมาส",
+    "lastName": "ไม่มีข้าวกิน",
+    "email": "bolovejesus@example.com",
     "birthday": "1985-07-20",
-    "personality": "Introverted and thoughtful",
-    "address": "456 Elm St, Smalltown, USA",
+    "personality": "INFJ",
+    "address": "คูคด กรุงเทพ",
     "phoneNumber": "+0987654321",
-    "job": "Data Scientist",
-    "interests": "EXTP",
+    "job": "เภสัข",
+    "interests": "สุขภาพ อาหาร",
     "socialAccounts": {
-      "facebook": "fb.com/haha55",
-      "line": "line.sdsas",
-      "instagram": "ig.bo",
-      "twitter": "twitter/bonus"
+      "facebook": "https://www.facebook.com/bobeau.supamas",
+      "line": "line.supamas",
+      "instagram": "ig.supamas",
+      "twitter": ""
     },
     "religiousInfo": {
-      "mentor": "bonus",
-      "groupCare": "นนทบุรี",
-      "previousChurch": "Community Church",
-      "Age": 39.8,
-      "remark": "Occasional visitor"
+      "mentor": "น้ำหวาน",
+      "groupCare": "รังสิต",
+      "previousChurch": "ศิโยนของพระเจ้าภูเก็ต",
+      "Age": 5,
+      "remark": "อ่านBIBLEมากเกินไป"
+    }
+  },
+	{
+    "id": 4,
+    "profilePicture": "shell.png",
+    "nickName": "shellC",
+    "firstName": "shellC ทรัมเป็ด",
+    "lastName": "เปาไม่หยุด",
+    "email": "shellCjesus@example.com",
+    "birthday": "1985-07-20",
+    "personality": "INFJ",
+    "address": "ลาดพร้าว กรุงเทพ",
+    "phoneNumber": "+0987654321",
+    "job": "นักศึกษา",
+    "interests": "ดนตรี",
+    "socialAccounts": {
+      "facebook": "https://www.facebook.com/shellC",
+      "line": "line.shellC",
+      "instagram": "ig.shellC",
+      "twitter": ""
+    },
+    "religiousInfo": {
+      "mentor": "นิว",
+      "groupCare": "ราชเทวี",
+      "previousChurch": "Seed Phuket city",
+      "Age": 5,
+      "remark": "รักพระเจ้ามากเกินไป"
+    }
+  },
+	{
+    "id": 5,
+    "profilePicture": "ken.png",
+    "nickName": "เก้น",
+    "firstName": "จักรพัต",
+    "lastName": "ตรัง",
+    "email": "lenm@example.com",
+    "birthday": "1985-07-20",
+    "personality": "INFJ",
+    "address": "อ่อนนุช กรุงเทพ",
+    "phoneNumber": "+0987654321",
+    "job": "นักศึกษา",
+    "interests": "ดนตรี ออกกำลังกาย",
+    "socialAccounts": {
+      "facebook": "https://www.facebook.com/ken",
+      "line": "line.ken",
+      "instagram": "ig.ken",
+      "twitter": ""
+    },
+    "religiousInfo": {
+      "mentor": "นิว",
+      "groupCare": "ราชเทวี",
+      "previousChurch": "Seed Phuket city",
+      "Age": 5,
+      "remark": "ไม่เคยขาดโบส"
     }
   }
 ]

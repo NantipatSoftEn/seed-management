@@ -3,13 +3,15 @@ import { asset } from '../lib/data.js'
 
 interface Props {
   title: string
+	profilePicture: string
 }
-const { title } = Astro.props
+const { title , profilePicture } = Astro.props
+console.log("profilePicture",profilePicture)
 ---
 
 <img
   class="w-200 h-200 mb-4 rounded-lg sm:mb-0 xl:mb-4 2xl:mb-0"
-  src={asset('images/users/bonnie-green-2x.png')}
+  src={profilePicture}
   alt="Jese picture"
 />
 <div>
