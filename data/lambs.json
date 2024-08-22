@@ -13,13 +13,14 @@
     "job": "Software Developer",
     "interests": "Coding, Hiking, Photography",
     "socialAccounts": {
-     "facebook": "fb.com/haha55",
-			"line":"line.sdsas",
-			"instragram": "ig.bo",
-			"twitter": "twitter/bonus"
+      "facebook": "fb.com/haha55",
+      "line": "line.sdsas",
+      "instragram": "ig.bo",
+      "twitter": "twitter/bonus"
     },
     "religiousInfo": {
-			
+      "mentor": "bonus",
+      "groupCare": "นนทบุรี",
       "previousChurch": "Grace Church",
       "age": 30.5,
       "remark": "Active member"
@@ -39,12 +40,14 @@
     "job": null,
     "interests": null,
     "socialAccounts": {
-    "facebook": "fb.com/haha55",
-			"line":"line.sdsas",
-			"instragram": "ig.bo",
-			"twitter": "twitter/bonus"
+      "facebook": "fb.com/haha55",
+      "line": "line.sdsas",
+      "instragram": "ig.bo",
+      "twitter": "twitter/bonus"
     },
     "religiousInfo": {
+      "mentor": "bonus",
+      "groupCare": "นนทบุรี",
       "previousChurch": null,
       "age": null,
       "remark": null
@@ -65,11 +68,13 @@
     "interests": "EXTP",
     "socialAccounts": {
       "facebook": "fb.com/haha55",
-			"line":"line.sdsas",
-			"instragram": "ig.bo",
-			"twitter": "twitter/bonus"
+      "line": "line.sdsas",
+      "instragram": "ig.bo",
+      "twitter": "twitter/bonus"
     },
     "religiousInfo": {
+      "mentor": "bonus",
+      "groupCare": "นนทบุรี",
       "previousChurch": "Community Church",
       "Age": 39.8,
       "remark": "Occasional visitor"
