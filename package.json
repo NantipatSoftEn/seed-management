@@ -37,8 +37,9 @@
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "dependencies": {
-		"@astrojs/sitemap": "^3.1.6",
+    "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.8.0",
     "@faker-js/faker": "^8.4.1",
     "apexcharts": "^3.52.0",
     "astro": "^4.14.4",
@@ -51,22 +52,9 @@
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.11",
-    "@types/eslint": "^8.21.1",
-    "@typescript-eslint/eslint-plugin": "^8.2.0",
-    "typescript": "^5.0.0",
-    "@typescript-eslint/parser": "^5.54.1",
-    "astro-eslint-parser": "^0.11.0",
-    "eslint": "^8.35.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-import-resolver-typescript": "^3.5.3",
-    "eslint-plugin-astro": "^0.23.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-tsdoc": "^0.2.17",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "typescript": "^5.0.0"
   }
 }
