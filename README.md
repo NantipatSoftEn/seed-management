@@ -10,5 +10,7 @@
 - [ ] แสดงรายชื่อลูกแกะภายใต้ mentor ที่ดูแล
 - [ ] dashboard สรุปผล
 - [ ] tracking การมาโบสมาแคร์
+- [ ] import data from excel
 - [ ] Perform user acceptance testing (UAT)
 - [ ] Deploy to production
+- [ ] connect backend
