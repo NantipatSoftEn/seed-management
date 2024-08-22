@@ -1,6 +1,6 @@
 ---
 import LayoutSidebar from '../../app/LayoutSidebar.astro'
-import UserSettings from '../../modules/UserSettings.astro'
+import LambSettings from '../../modules/LambSettings.astro'
 import type { APIRoute } from 'astro'
 const { id } = Astro.params
 
@@ -8,5 +8,5 @@ const { id } = Astro.params
 ---
 
 <LayoutSidebar>
-  <UserSettings id={id} />
+  <LambSettings id={id} />
 </LayoutSidebar>

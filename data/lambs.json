@@ -7,16 +7,19 @@
     "lastName": "Doe",
     "email": "john.doe@example.com",
     "birthday": "1990-01-15",
-    "personality": "Friendly and outgoing",
+    "personality": "ISTP",
     "address": "123 Main St, Springfield, USA",
     "phoneNumber": "+1234567890",
     "job": "Software Developer",
     "interests": "Coding, Hiking, Photography",
-    "SocialAccounts": {
-      "platformName": "Twitter",
-      "URL": "https://twitter.com/johndoe"
+    "socialAccounts": {
+     "facebook": "fb.com/haha55",
+			"line":"line.sdsas",
+			"instragram": "ig.bo",
+			"twitter": "twitter/bonus"
     },
     "religiousInfo": {
+			
       "previousChurch": "Grace Church",
       "age": 30.5,
       "remark": "Active member"
@@ -25,19 +28,21 @@
   {
     "id": 2,
     "profilePicture": "roberta-casas.png",
-    "nickName": null,
+    "nickName": "testmaN",
     "firstName": "Jane",
     "lastName": "Smith",
     "email": "jane.smith@example.com",
     "birthday": null,
-    "personality": null,
+    "personality": "INFP",
     "address": null,
     "phoneNumber": null,
     "job": null,
     "interests": null,
     "socialAccounts": {
-      "platformName": null,
-      "URL": null
+    "facebook": "fb.com/haha55",
+			"line":"line.sdsas",
+			"instragram": "ig.bo",
+			"twitter": "twitter/bonus"
     },
     "religiousInfo": {
       "previousChurch": null,
@@ -57,10 +62,12 @@
     "address": "456 Elm St, Smalltown, USA",
     "phoneNumber": "+0987654321",
     "job": "Data Scientist",
-    "interests": "Reading, Chess, AI",
+    "interests": "EXTP",
     "socialAccounts": {
-      "platformName": "LinkedIn",
-      "URL": "https://linkedin.com/in/alicejohnson"
+      "facebook": "fb.com/haha55",
+			"line":"line.sdsas",
+			"instragram": "ig.bo",
+			"twitter": "twitter/bonus"
     },
     "religiousInfo": {
       "previousChurch": "Community Church",
