@@ -15,7 +15,7 @@ db.exec(`CREATE TABLE IF NOT EXISTS User (
 			Job TEXT,
 			Interests TEXT
 	);
-`);
+`)
 
 db.exec(`CREATE TABLE IF NOT EXISTS Settings (
 			SettingID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -24,8 +24,7 @@ db.exec(`CREATE TABLE IF NOT EXISTS Settings (
 			Timezone TEXT,
 			FOREIGN KEY (UserID) REFERENCES User(UserID)
 	);
-`);
-
+`)
 
 db.exec(`CREATE TABLE IF NOT EXISTS SocialAccounts (
 			AccountID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -34,7 +33,7 @@ db.exec(`CREATE TABLE IF NOT EXISTS SocialAccounts (
 			URL TEXT,
 			FOREIGN KEY (UserID) REFERENCES User(UserID)
 	);
-`);
+`)
 
 db.exec(`CREATE TABLE IF NOT EXISTS ReligiousInfo (
 			ReligiousInfoID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,6 +43,6 @@ db.exec(`CREATE TABLE IF NOT EXISTS ReligiousInfo (
 			Remark TEXT,
 			FOREIGN KEY (UserID) REFERENCES User(UserID)
 	);
-`);
+`)
 
-console.log('Tables created successfully.');
+console.log('Tables created successfully.')

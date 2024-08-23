@@ -15,14 +15,14 @@ const mockLambs: Lamb[] = [
 
     SocialAccounts: {
       PlatformName: 'Twitter',
-      URL: 'https://twitter.com/johndoe'
+      URL: 'https://twitter.com/johndoe',
     },
 
     ReligiousInfo: {
       PreviousChurch: 'Grace Church',
       Age: 30.5,
-      Remark: 'Active member'
-    }
+      Remark: 'Active member',
+    },
   },
   {
     id: 2,
@@ -40,14 +40,14 @@ const mockLambs: Lamb[] = [
 
     SocialAccounts: {
       PlatformName: null,
-      URL: null
+      URL: null,
     },
 
     ReligiousInfo: {
       PreviousChurch: null,
       Age: null,
-      Remark: null
-    }
+      Remark: null,
+    },
   },
   {
     id: 3,
@@ -65,13 +65,13 @@ const mockLambs: Lamb[] = [
 
     SocialAccounts: {
       PlatformName: 'LinkedIn',
-      URL: 'https://linkedin.com/in/alicejohnson'
+      URL: 'https://linkedin.com/in/alicejohnson',
     },
 
     ReligiousInfo: {
       PreviousChurch: 'Community Church',
       Age: 39.8,
-      Remark: 'Occasional visitor'
-    }
-  }
-];
+      Remark: 'Occasional visitor',
+    },
+  },
+]

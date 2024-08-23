@@ -26,8 +26,8 @@ interface SocialAccounts {
 
 // Interface for the ReligiousInfo table
 interface ReligiousInfo {
-	mentor: string | null 
-	groupCare: string | null
+  mentor: string | null
+  groupCare: string | null
   previousChurch: string | null
   age: number | null // DECIMAL(10, 2) could be a number
   remark: string | null

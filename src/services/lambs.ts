@@ -4,7 +4,7 @@ import { RANDOMIZE } from '../app/constants.js'
 
 import lambStaticJSON from '../../data/lambs.json' assert { type: 'json' }
 
-export function getLambs(randomize = RANDOMIZE):Lamb[] {
+export function getLambs(randomize = RANDOMIZE): Lamb[] {
   console.log('getLambs')
 
   const result = randomize

@@ -28,5 +28,3 @@ export interface User {
 }
 
 export type PlaygroundAction = (typeof playgroundActions)[number]
-
-

@@ -7,12 +7,11 @@ import { fetchData } from 'src/lib/data'
 import { personalityType } from '$constants/personalityType'
 const { id } = Astro.props
 // console.log("id", id)
-const lambs = await fetchData('lambs') as Lamb[]
+const lambs = (await fetchData('lambs')) as Lamb[]
 // console.log("lambs",lambs)
-const lamb: Lamb | null = lambs.find(lamb => lamb.id == id) || null;
+const lamb: Lamb | null = lambs.find(lamb => lamb.id == id) || null
 // console.log("lamb",lamb)
-const profilePicture = `/persons/${lamb?.profilePicture}`;
-
+const profilePicture = `/persons/${lamb?.profilePicture}`
 ---
 
 <div
@@ -91,7 +90,10 @@ const profilePicture = `/persons/${lamb?.profilePicture}`;
       <div
         class="items-center sm:flex sm:space-x-4 xl:block xl:space-x-0 2xl:flex 2xl:space-x-4"
       >
-        <PictureUploader title="Profile picture"  profilePicture={profilePicture}/>
+        <PictureUploader
+          title="Profile picture"
+          profilePicture={profilePicture}
+        />
       </div>
     </div>
     <!-- <div
@@ -244,7 +246,12 @@ const profilePicture = `/persons/${lamb?.profilePicture}`;
           <li class="pb-6 pt-4">
             <div class="flex items-center space-x-4">
               <div class="flex-shrink-0">
-                <img src="/images/LINE_Brand_icon.png" height="25" width="25" alt="LineLogo" />
+                <img
+                  src="/images/LINE_Brand_icon.png"
+                  height="25"
+                  width="25"
+                  alt="LineLogo"
+                />
               </div>
 
               <div class="min-w-0 flex-1">
@@ -734,7 +741,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`;
               id="mentor"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Mentor"
-							value={lamb?.religiousInfo?.mentor}
+              value={lamb?.religiousInfo?.mentor}
               required
             />
           </div>
@@ -750,7 +757,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`;
               id="groupcare"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="กลุ่มแคร์"
-							value={lamb?.religiousInfo.groupCare}
+              value={lamb?.religiousInfo.groupCare}
               required
             />
           </div>
