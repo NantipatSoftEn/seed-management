@@ -7,7 +7,7 @@ import { url } from '../lib/data.js'
 <!-- TODO: Dynamic dropdowns -->
 <aside
   id="sidebar"
-  class="fixed left-0 top-0 z-20 flex hidden h-full w-64 flex-shrink-0 flex-col pt-16 font-normal transition-width duration-75 lg:flex"
+  class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
   aria-label="Sidebar"
 >
   <div
@@ -77,7 +77,7 @@ import { url } from '../lib/data.js'
           </li>
           <li>
             <a
-              href={'crud/lambs'}
+              href={url('crud/lambs')}
               class="group flex items-center rounded-lg p-2 text-base text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
             >
               <svg
@@ -94,7 +94,7 @@ import { url } from '../lib/data.js'
                   d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
                 ></path>
               </svg>
-              <span class="ml-3" sidebar-toggle-item>รายชื่อสมาชิก</span>
+              <span class="ml-3" >รายชื่อสมาชิก</span>
             </a>
           </li>
           <!-- <li>
@@ -319,6 +319,7 @@ import { url } from '../lib/data.js'
               class="group flex w-full items-center rounded-lg p-2 text-base text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
               aria-controls="dropdown-auth"
               data-collapse-toggle="dropdown-auth"
+							id="dropdown-auth"
             >
               <svg
                 class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -346,7 +347,7 @@ import { url } from '../lib/data.js'
                   clip-rule="evenodd"></path></svg
               >
             </button>
-            <ul id="dropdown-auth" class="hidden space-y-2 py-2">
+            <ul id="dropdown-auth-list" class="hidden space-y-2 py-2">
               <li>
                 <a
                   href={url('authentication/sign-in')}
@@ -739,14 +740,13 @@ import { url } from '../lib/data.js'
   </div>
 
   <div
-    class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90"
+    class="relative inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90"
     id="sidebarBackdrop"
   >
   </div>
 
   <script>
     const sidebar = document.getElementById('sidebar')
-
     if (sidebar) {
       const toggleSidebarMobile = (
         sidebar: HTMLElement,
@@ -754,6 +754,8 @@ import { url } from '../lib/data.js'
         toggleSidebarMobileHamburger: HTMLElement,
         toggleSidebarMobileClose: HTMLElement
       ) => {
+				console.log("sidebar",sidebar)
+				console.log("sidebarBackdrop",sidebarBackdrop)
         sidebar.classList.toggle('hidden')
         sidebarBackdrop.classList.toggle('hidden')
         toggleSidebarMobileHamburger.classList.toggle('hidden')
@@ -801,5 +803,12 @@ import { url } from '../lib/data.js'
         )
       })
     }
+
+		const dropdownAuthBtn = document.getElementById('dropdown-auth');
+		const collapsibleContent = document.getElementById('dropdown-auth-list');
+		dropdownAuthBtn?.addEventListener('click', () => {
+      collapsibleContent?.classList.toggle('hidden');
+    });
+
   </script>
 </aside>
