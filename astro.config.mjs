@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import deno from '@astrojs/deno';
+import vercel from '@astrojs/vercel/serverless';
 
 const DEV_PORT = 2121;
 
@@ -13,7 +13,7 @@ export default defineConfig({
   output: 'server',
   /* Like Vercel, Netlify,… Mimicking for dev. server */
   // trailingSlash: 'always',
-	adapter: deno(),
+	adapter: vercel(),
   server: {
     /* Dev. server only */
     port: DEV_PORT
