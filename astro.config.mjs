@@ -8,8 +8,8 @@ const DEV_PORT = 2121;
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.CI ? 'https://seed-management.vercel.app' : `http://localhost:${DEV_PORT}`,
-  base: process.env.CI ? '/flowbite-astro-admin-dashboard' : undefined,
+  site: 'https://seed-management.vercel.app',
+  base: '',
   output: 'server',
   /* Like Vercel, Netlify,… Mimicking for dev. server */
   // trailingSlash: 'always',
