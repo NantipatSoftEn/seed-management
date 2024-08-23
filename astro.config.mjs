@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import netlify from '@astrojs/netlify';
+import deno from '@astrojs/deno';
 
 const DEV_PORT = 2121;
 
@@ -13,7 +13,7 @@ export default defineConfig({
   output: 'server',
   /* Like Vercel, Netlify,… Mimicking for dev. server */
   // trailingSlash: 'always',
-  adapter: netlify(),
+	adapter: deno(),
   server: {
     /* Dev. server only */
     port: DEV_PORT
