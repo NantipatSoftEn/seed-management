@@ -6,7 +6,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts'
-import { FileText } from 'lucide-react'
 
 const blessingData = [
   { name: 'เผยพระวจนะ', score: 10 },
@@ -41,7 +40,7 @@ export default function BlessingStat() {
     <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-800">
-          Stat ของประทานของ test
+          Stat ของประทาน
         </h2>
         <p className="mt-1 text-sm text-gray-600">
           แสดงคะแนนของประทานต่างๆ (คะแนนเต็ม 15)
