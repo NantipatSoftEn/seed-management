@@ -28,12 +28,12 @@ export async function getLambs(randomize = RANDOMIZE) {
   const api = new GristDocAPI(docUrl);
 	const data = await api.fetchTable('LambInfo');
   console.log("LambdaInfo",data);
-  const result = randomize
-    ? lambStaticJSON.map(p => {
-        // p.nickName = faker.name.fullName()
-        return p
-      })
-    : lambStaticJSON
+  // const result = randomize
+  //   ? lambStaticJSON.map(p => {
+  //       // p.nickName = faker.name.fullName()
+  //       return p
+  //     })
+  //   : lambStaticJSON
 
   return data
 }
