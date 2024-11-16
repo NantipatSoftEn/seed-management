@@ -5,8 +5,9 @@ import { RANDOMIZE } from '../app/constants.js'
 import lambStaticJSON from '../../data/lambs.json' assert { type: 'json' }
 import { GristDocAPI } from 'grist-api';
 
-export async function getLambs(randomize = RANDOMIZE): Promise<Lamb[]> {
+export async function getLambs(randomize = RANDOMIZE) {
   console.log('getLambs')
+	// const docUrl = process.env.DOC_URL;
   // const authorization = await fetch(
   //   'https://docs.getgrist.com/api/docs/gMcnyNRQvNWPZPmqF7Fv9T/tables/LambInfo/records',
   //   {
@@ -14,12 +15,11 @@ export async function getLambs(randomize = RANDOMIZE): Promise<Lamb[]> {
 
   //     headers: {
   //       Accept: 'application/json',
-	// 			'Authorization': `Bearer ${apiKey}`,
+	// 			'Authorization': `Bearer ${process.env.DOC_URL}`,
   //     },
   //   }
   // )
-	// const t = await authorization.json()
-  // console.log('responsefucU',t.records[0].fields)
+
 
   const docUrl = process.env.DOC_URL;
   if (!docUrl) {
@@ -35,5 +35,5 @@ export async function getLambs(randomize = RANDOMIZE): Promise<Lamb[]> {
       })
     : lambStaticJSON
 
-  return result as Lamb[]
+  return data
 }
