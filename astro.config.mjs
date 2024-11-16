@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
 
 import react from '@astrojs/react';
+import 'dotenv/config'
 
 const DEV_PORT = 2121;
 

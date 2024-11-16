@@ -24,3 +24,5 @@ pnpm-debug.log*
 # misc.
 .dev*
 package-lock.json
+.grist-api-key
+.env
