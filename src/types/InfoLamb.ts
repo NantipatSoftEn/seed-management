@@ -1,19 +1,31 @@
 interface Lamb {
-  id: number
-  profilePicture: string | null // Nullable since it's a TEXT field
+  // id: number
   nickName: string | null
   firstName: string | null
   lastName: string | null
-  email: string
-  birthday: string | null // Assuming DATE is stored as a string in SQLite
+
+	gender: string | null
+	address: string | null,
+	email: string | null
+	phone: string | null
+  birthday: string | null 
   personality: string | null
-  address: string | null
   phoneNumber: string | null
   job: string | null
   interests: string | null
+	interesting: string | null
+	persernality: string | null
 
-  socialAccounts: SocialAccounts
-  religiousInfo: ReligiousInfo
+	isTimote: boolean
+	status: string | null
+	groupCare: string | null
+	age: number | null
+	ageInGod: number | null
+	remark: string | null
+	previouseChurch: string | null
+	gift: string | null
+	profilePicture: string | null 
+
 }
 
 // Interface for the SocialAccounts table
@@ -32,3 +44,4 @@ interface ReligiousInfo {
   age: number | null // DECIMAL(10, 2) could be a number
   remark: string | null
 }
+
