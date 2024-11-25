@@ -17,6 +17,7 @@ export async function getLambs():Promise<Lamb[]> {
 
 function mapRecordToLamb(record: IRecord): Lamb {
 	const lamb: Lamb = {
+		id: getNumber(record.id),
 		nickName: getString(record.nickName),
 		firstName: getString(record.firstName),
 		lastName: getString(record.lastName),

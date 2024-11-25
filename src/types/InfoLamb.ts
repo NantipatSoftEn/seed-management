@@ -1,5 +1,5 @@
 interface Lamb {
-  // id: number
+  id: number | null
   nickName: string | null
   firstName: string | null
   lastName: string | null
