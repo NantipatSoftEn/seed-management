@@ -351,7 +351,10 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                         </div>
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
-                        {user.gender}
+												<div class={`p-2 m-2 rounded-md inline-block ${user.gender == 'male' ? 'bg-sky-200' : 'bg-red-200' }`} >
+													{user.gender}
+												</div>
+									
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
                         {user.groupCare}
@@ -363,7 +366,7 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                         {user.interesting}
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
-												<div class="personality-type" style={`background-color: ${getPersoanlityColor(user.persernality)}`}><strong>{user.persernality}</strong></div> 
+												<div class="p-4 m-4 rounded-md inline-block" style={`background-color: ${getPersoanlityColor(user.persernality)}`}><strong>{user.persernality}</strong></div> 
 
                       </td>
 

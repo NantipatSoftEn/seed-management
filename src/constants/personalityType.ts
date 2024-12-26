@@ -1,22 +1,21 @@
 const Personalities = [
-  { type: 'INTJ (Architect)', color: '#FDE68A' }, // Light Yellow
-  { type: 'INTP (Logician)', color: '#BDE0FE' }, // Light Blue
-  { type: 'ENTJ (Commander)', color: '#C8E6C9' }, // Light Green
-  { type: 'ENTP (นักโต้วาที)', color: '#F4CCCC' }, // Light Pink
-  { type: 'INFJ (Advocate)', color: '#E1BEE7' }, // Light Purple
-  { type: 'INFP (ผู้ไกล่เกลี่ย)', color: '#D8BFD8' }, // Lavender
-  { type: 'ENFJ (ตัวเอก)', color: '#FFF0A5' }, // Light Yellow
-  { type: 'ENFP (Campaigner)', color: '#B0E0E6' }, // Light Turquoise
-  { type: 'ISTJ (Inspector)', color: '#D3D3D3' }, // Light Gray
-  { type: 'ISFJ (Defender)', color: '#F08080' }, // Light Coral
-  { type: 'ESTJ (ผู้บริหาร)', color: '#90EE90' }, // Light Green
-  { type: 'ESFJ (Consul)', color: '#DDA0DD' }, // Plum
-  { type: 'ISTP (นักปราชญ์)', color: '#FFA07A' }, // Light Salmon
-  { type: 'ISFP (Adventurer)', color: '#A9A9A9' }, // Dark Gray
-  { type: 'ESTP (Entrepreneur)', color: '#FFA07A' }, // Light Salmon
-  { type: 'ESFP (Entertainer)', color: '#B0E0E6' }, // Light Turquoise
-]
-
+  { type: 'INTJ (Architect)', color: '#E6C7C2' }, // Pastel Pink
+  { type: 'INTP (Logician)', color: '#AED6F1' }, // Pastel Blue
+  { type: 'ENTJ (Commander)', color: '#A2D9CE' }, // Pastel Green
+  { type: 'ENTP (นักโต้วาที)', color: '#F9E79F' }, // Pastel Yellow
+  { type: 'INFJ (Advocate)', color: '#D7BDE2' }, // Pastel Purple
+  { type: 'INFP (ผู้ไกล่เกลี่ย)', color: '#F5CBA7' }, // Pastel Orange
+  { type: 'ENFJ (ตัวเอก)', color: '#C39BD3' }, // Pastel Lavender
+  { type: 'ENFP (Campaigner)', color: '#76D7C4' }, // Pastel Teal
+  { type: 'ISTJ (Inspector)', color: '#D5DBDB' }, // Pastel Gray
+  { type: 'ISFJ (Defender)', color: '#FDEBD0' }, // Pastel Cream
+  { type: 'ESTJ (ผู้บริหาร)', color: '#ABEBC6' }, // Pastel Mint
+  { type: 'ESFJ (Consul)', color: '#E8DAEF' }, // Pastel Lilac
+  { type: 'ISTP (นักปราชญ์)', color: '#F2D7D5' }, // Pastel Rose
+  { type: 'ISFP (Adventurer)', color: '#D6EAF8' }, // Pastel Sky Blue
+  { type: 'ESTP (Entrepreneur)', color: '#F8C471' }, // Pastel Orange
+  { type: 'ESFP (Entertainer)', color: '#7FB3D5' }, // Pastel Steel Blue
+];
 export const getPersoanlityColor = (type: string | null) => {
   const personality = Personalities.find(
     personality => personality.type === type
