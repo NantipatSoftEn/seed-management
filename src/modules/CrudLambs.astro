@@ -2,12 +2,22 @@
 /* eslint max-lines: 'off' */
 
 import HeaderLink from '$components/HeaderLink.astro'
+import { getPersoanlityColor } from '$constants/personalityType'
+import type { Lamb } from 'src/types/InfoLamb'
 import NavPagination from '../components/NavPagination.astro'
 import { asset, fetchData, url } from '../lib/data.js'
 const { class: clazz } = Astro.props
 const lambs: Lamb[] = (await fetchData('lambs')) || []
----
 
+---
+<style>
+	.personality-type {
+		padding: 10px;
+		margin: 10px;
+		border-radius: 5px;
+		display: inline-block;
+	}
+</style>
 <entities-crud
   type="users"
   class:list={['block overflow-hidden shadow', clazz]}
@@ -249,23 +259,19 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                 >
                   Name
                 </th>
+
                 <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
-                  Mentor
+                  gender
                 </th>
+
                 <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
                   กลุ่มแคร์
-                </th>
-                <th
-                  scope="col"
-                  class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
-                >
-                  Interesting
                 </th>
                 <th
                   scope="col"
@@ -277,19 +283,31 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
-                  Country
+                  interesting
+                </th>
+                <th
+                  scope="col"
+                  class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
+                >
+                  persernality
                 </th>
                 <!-- <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
-                  Status
+                  Address
                 </th> -->
                 <th
                   scope="col"
                   class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
                 >
-                  Actions
+                  status
+                </th>
+                <th
+                  scope="col"
+                  class="p-4 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400"
+                >
+                  Action
                 </th>
               </tr>
             </thead>
@@ -297,7 +315,7 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
               class="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-800"
             >
               {
-                lambs.map(user => (
+                lambs.map((user: Lamb) => (
                   <div>
                     <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
                       <td class="w-4 p-4">
@@ -315,8 +333,12 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                       </td>
                       <td class="mr-12 flex items-center space-x-6 whitespace-nowrap p-4">
                         <img
-                          class="h-32 w-32 rounded-full"
-                          src={`/persons/${user.profilePicture}`}
+                          class="h-24 w-24 rounded-full"
+                          src={
+                            user.profilePicture
+                              ? user.profilePicture
+                              : '/user.png'
+                          }
                           alt={`${user.nickName} avatar`}
                         />
                         <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -329,21 +351,26 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                         </div>
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
-                         {""}
+                        {user.gender}
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
                         {user.groupCare}
                       </td>
                       <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
-                        {user.interests}
-                      </td>
-                      <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                         {user.job}
                       </td>
-                      <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
-                        {user.address}
+                      <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
+                        {user.interesting}
                       </td>
-                      {/* <td class="whitespace-nowrap p-4 text-base font-normal text-gray-900 dark:text-white">
+                      <td class="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
+												<div class="personality-type" style={`background-color: ${getPersoanlityColor(user.persernality)}`}><strong>{user.persernality}</strong></div> 
+
+                      </td>
+
+                      {/* <td class="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
+                        {user.address}
+                      </td> */}
+                      <td class="whitespace-nowrap p-4 text-base font-normal text-gray-900 dark:text-white">
                         <div class="flex items-center">
                           {user.status === 'Active' ? (
                             <div class="mr-2 h-2.5 w-2.5 rounded-full bg-green-400" />
@@ -352,7 +379,7 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                           )}
                           {user.status}
                         </div>
-                      </td> */}
+                      </td>
                       <td class="space-x-2 whitespace-nowrap p-4">
                         <HeaderLink href={url(`settings/${user.id}`)}>
                           <button
@@ -365,14 +392,12 @@ const lambs: Lamb[] = (await fetchData('lambs')) || []
                               viewBox="0 0 20 20"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <>
-                                <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                                  clip-rule="evenodd"
-                                />
-                              </>
+                              <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                clip-rule="evenodd"
+                              />
                             </svg>
                             Edit
                           </button>
