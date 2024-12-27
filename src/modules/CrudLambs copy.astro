@@ -10,14 +10,7 @@ const { class: clazz } = Astro.props
 const lambs: Lamb[] = (await fetchData('lambs')) || []
 
 ---
-<style>
-	.personality-type {
-		padding: 10px;
-		margin: 10px;
-		border-radius: 5px;
-		display: inline-block;
-	}
-</style>
+
 <entities-crud
   type="users"
   class:list={['block overflow-hidden shadow', clazz]}

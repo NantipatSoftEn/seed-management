@@ -4,8 +4,9 @@ import PictureUploader from '../components/PictureUploader.astro'
 import ToggleSwitch from '../components/ToggleSwitch.astro'
 
 import { asset, fetchData } from 'src/lib/data'
-import { personalityType } from '$constants/personalityType'
+import { Personalities } from '$constants/personalityType'
 import BlessingStat from '$components/BlessingStats'
+import type { Lamb } from 'src/types/InfoLamb'
 const { id } = Astro.props
 // console.log("id", id)
 const lambs = (await fetchData('lambs')) as Lamb[]

@@ -24,7 +24,7 @@ export const GET: APIRoute = async ({ params /* , request */ }) => {
   if (!operationName) return new Response('404', { status: 404 })
 
   const body = await endpointsToOperations[operationName]()
-	console.log("Body",body)
+	// console.log("Body",body)
   return new Response(JSON.stringify(body), {
     status: 200,
     headers: {

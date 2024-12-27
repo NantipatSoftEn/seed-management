@@ -1,21 +1,21 @@
 /* eslint-disable no-param-reassign */
 import { GristDocAPI, type IRecord } from 'grist-api'
+import { mockLambs } from 'src/mocks/lamps'
 import type { GroupCare, Lamb } from 'src/types/InfoLamb'
 
 export async function getLambs(): Promise<Lamb[]> {
-  console.log('getLambs')
+  // console.log('getLambs')
   const docUrl = process.env.DOC_URL
   if (!docUrl) {
     throw new Error('DOC_URL environment variable is not defined')
   }
 
-  const api = new GristDocAPI(docUrl)
-  const records: IRecord[] = await api.fetchTable('LambInfo_Main')
-  const subRecords: IRecord[] = await api.fetchTable('GroupCare')
-	const groupCare: GroupCare[] = subRecords.map(mapRecordToGroupCare)
-  console.log('TablegroupCare', groupCare)
-  const lambs: Lamb[] = records.map(record => mapRecordToLamb(record, groupCare))
-  return lambs
+  // const api = new GristDocAPI(docUrl)
+  // const records: IRecord[] = await api.fetchTable('LambInfo_Main')
+  // const subRecords: IRecord[] = await api.fetchTable('GroupCare')
+	// const groupCare: GroupCare[] = subRecords.map(mapRecordToGroupCare)
+  // const lambs: Lamb[] = records.map(record => mapRecordToLamb(record, groupCare))
+  return mockLambs
 }
 
 const getNameGroupCare = (groupCare: GroupCare[], id: number | null): string | null => {

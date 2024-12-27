@@ -1,4 +1,4 @@
-const Personalities = [
+export const Personalities = [
   { type: 'INTJ (Architect)', color: '#E6C7C2' }, // Pastel Pink
   { type: 'INTP (Logician)', color: '#AED6F1' }, // Pastel Blue
   { type: 'ENTJ (Commander)', color: '#A2D9CE' }, // Pastel Green
