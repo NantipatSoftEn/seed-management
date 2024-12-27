@@ -8,7 +8,7 @@ import NavPagination from '../components/NavPagination.astro'
 import { asset, fetchData, url } from '../lib/data.js'
 const { class: clazz } = Astro.props
 const lambs: Lamb[] = (await fetchData('lambs')) || []
-
+console.log("class")
 ---
 
 <entities-crud
