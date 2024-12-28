@@ -357,7 +357,11 @@ const CrudLambs = () => {
                       <td className="max-w-sm overflow-hidden truncate p-4 text-base font-normal text-gray-900 dark:text-gray-400 xl:max-w-xs">
                         <div
                           className="m-4 inline-block rounded-md p-4"
-                          style={{ backgroundColor: getPersoanlityColor(user.persernality) }}
+                          style={{
+                            backgroundColor: getPersoanlityColor(
+                              user.persernality
+                            ),
+                          }}
                         >
                           <strong>{user.persernality}</strong>
                         </div>

@@ -13,12 +13,12 @@ const HeaderLink: React.FC<HeaderLinkProps> = ({ href, className, ...props }) =>
   const isActive = href === pathname || href === '/' + subpath?.[0];
 
   return (
-    <div>
+   
       <a href={href} className={`${className} ${isActive ? 'active' : ''}`} {...props}>
         {props.children}
       </a>
      
-    </div>
+   
   );
 };
 
