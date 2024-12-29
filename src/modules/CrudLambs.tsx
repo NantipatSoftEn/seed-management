@@ -10,10 +10,16 @@ interface CrudLambsProps {
 
 const CrudLambs = () => {
   const [lambs, setLambs] = useState<Lamb[]>([])
-
+	const [lambsFilter, setLambsFilter] = useState<Lamb[]>([])
   const [selectedStatus, setSelectedStatus] = useState('')
 
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		setLambsFilter(lambs)
+		const filterStatusLambs = lambs.filter((lamb:Lamb) => {
+			return lamb.status === event.target.value
+		})
+		console.log(lambs)
+		setLambsFilter(filterStatusLambs)
     setSelectedStatus(event.target.value)
   }
 
@@ -21,6 +27,7 @@ const CrudLambs = () => {
     const fetchLambs = async () => {
       const data = await fetchData('lambs')
       setLambs(data || [])
+			setLambsFilter(data || [])
     }
 
     fetchLambs()
@@ -122,8 +129,8 @@ const CrudLambs = () => {
                   className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                 >
                   <option value="">Select status</option>
-                  <option value="active">Active</option>
-                  <option value="inactive">Inactive</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
                 </select>
               </div>
               <div className="mt-3 flex space-x-1 pl-0 sm:mt-0 sm:pl-2">
@@ -315,7 +322,7 @@ const CrudLambs = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-800">
-                  {lambs.map((user: Lamb) => (
+                  {lambsFilter.map((user: Lamb) => (
                     <tr
                       key={user.id}
                       className="hover:bg-gray-100 dark:hover:bg-gray-700"
