@@ -8,11 +8,9 @@ import { Personalities } from '$constants/personalityType'
 import BlessingStat from '$components/BlessingStats'
 import type { Lamb } from 'src/types/InfoLamb'
 const { id } = Astro.props
-// console.log("id", id)
 const lambs = (await fetchData('lambs')) as Lamb[]
-// console.log("lambs",lambs)
 const lamb: Lamb | null = lambs.find(lamb => lamb.id == id) || null
-// console.log("lamb",lamb)
+
 const profilePicture = `/persons/${lamb?.profilePicture}`
 ---
 
@@ -189,7 +187,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
                     id="facebook"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder=""
-                    value={lamb?.socialAccounts?.facebook}
+                    value={''}
                     required
                   />
                 </a>
@@ -237,7 +235,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
                     id="tacebook"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder=""
-                    value={lamb?.socialAccounts?.twitter}
+                    value={''}
                     required
                   />
                 </a>
@@ -271,7 +269,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
                     id="line"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder=""
-                    value={lamb?.socialAccounts?.line}
+                    value={''}
                     required
                   />
                 </span>
@@ -304,7 +302,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
                     id="ig"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder=""
-                    value={lamb?.socialAccounts?.instagram}
+                    value={''}
                     required
                   />
                 </span>
@@ -688,9 +686,9 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
             >
               <option disabled selected>Choose a personality</option>
               {
-                personalityType.map(type => (
-                  <option value={type} selected={type === lamb?.personality}>
-                    {type}
+                Personalities.map(p => (
+                  <option value={p.type} selected={p.type === lamb?.personality}>
+                    {p.type}
                   </option>
                 ))
               }
@@ -743,7 +741,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
               id="mentor"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Mentor"
-              value={lamb?.religiousInfo?.mentor}
+              value={''}
               required
             />
           </div>
@@ -759,7 +757,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
               id="groupcare"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="กลุ่มแคร์"
-              value={lamb?.religiousInfo.groupCare}
+              value={lamb?.groupCare}
               required
             />
           </div>
@@ -776,7 +774,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Seed Chruch"
               ]
-              value={lamb?.religiousInfo?.previousChurch}
+              value={lamb?.previouseChurch}
               required
             />
           </div>
@@ -792,7 +790,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
               name="number"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="Enter a number"
-              value={lamb?.religiousInfo?.age}
+              value={lamb?.ageInGod}
               required
             />
           </div>
@@ -808,7 +806,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
               name="remark"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="บอกเล่าสถานการณ์"
-              value={lamb?.religiousInfo?.remark}
+              value={lamb?.remark}
               required
             />
           </div>
