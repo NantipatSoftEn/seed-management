@@ -10,16 +10,26 @@ interface CrudLambsProps {
 
 const CrudLambs = () => {
   const [lambs, setLambs] = useState<Lamb[]>([])
-	const [lambsFilter, setLambsFilter] = useState<Lamb[]>([])
+  const [lambsFilter, setLambsFilter] = useState<Lamb[]>([])
   const [selectedStatus, setSelectedStatus] = useState('')
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = event.target.value.toLowerCase()
+
+    const filteredLambs = lambs.filter(
+      (lamb: Lamb) =>
+        lamb.nickName?.toLowerCase().includes(searchValue) ||
+        lamb.firstName?.toLowerCase().includes(searchValue)
+    )
+    setLambsFilter(filteredLambs)
+  }
+
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setLambsFilter(lambs)
-		const filterStatusLambs = lambs.filter((lamb:Lamb) => {
-			return lamb.status === event.target.value
-		})
-		console.log(lambs)
-		setLambsFilter(filterStatusLambs)
+    setLambsFilter(lambs)
+    const filterStatusLambs = lambs.filter((lamb: Lamb) => {
+      return lamb.status === event.target.value
+    })
+    setLambsFilter(filterStatusLambs)
     setSelectedStatus(event.target.value)
   }
 
@@ -27,7 +37,7 @@ const CrudLambs = () => {
     const fetchLambs = async () => {
       const data = await fetchData('lambs')
       setLambs(data || [])
-			setLambsFilter(data || [])
+      setLambsFilter(data || [])
     }
 
     fetchLambs()
@@ -119,6 +129,7 @@ const CrudLambs = () => {
                     id="users-search"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Search for users"
+                    onChange={handleSearch}
                   />
                 </div>
               </form>
