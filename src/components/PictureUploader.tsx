@@ -2,7 +2,7 @@ import React from 'react';
 
 interface PictureUploaderProps {
   title: string;
-  profilePicture: string;
+  profilePicture: string | null | undefined;
 }
 
 const PictureUploader: React.FC<PictureUploaderProps> = ({ title, profilePicture }) => {
@@ -13,13 +13,13 @@ const PictureUploader: React.FC<PictureUploaderProps> = ({ title, profilePicture
   const handleDelete = () => {
     // Delete handler...
   };
-
+	console.log('profilePicture', profilePicture)
   return (
     <div>
       <img
         className="w-200 h-200 mb-4 rounded-lg sm:mb-0 xl:mb-4 2xl:mb-0"
-        src={profilePicture}
-        alt="Profile picture"
+        src={profilePicture ?? '/user.png'}
+        alt="User profile"
       />
       <div>
         <h3 className="mb-1 text-xl font-bold text-gray-900 dark:text-white">

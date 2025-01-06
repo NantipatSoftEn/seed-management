@@ -10,6 +10,7 @@ import ToggleSwitch from '$components/ToggleSwitchR'
 
 export const LambSettings = ({ id }: { id: string | undefined }) => {
   const [lamb, setLamb] = useState<Lamb | null>(null)
+  const [selectedPersonality, setSelectedPersonality] = useState('')
 
   useEffect(() => {
     const fetchLambData = async () => {
@@ -17,11 +18,10 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
       const foundLamb = lambs.find(lamb => lamb.id === Number(id)) || null
       setLamb(foundLamb)
     }
-
+    console.log('lamb', lamb)
     fetchLambData()
   }, [id])
 
-  const profilePicture = `/persons/${lamb?.profilePicture}`
   return (
     <div>
       <div className="grid grid-cols-1 px-4 pt-6 dark:bg-gray-900 xl:grid-cols-3 xl:gap-4">
@@ -59,10 +59,10 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     ></path>
                   </svg>
                   <a
-                    href="#section"
+                    href="/crud/lambs"
                     className="ml-1 text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white md:ml-2"
                   >
-                    Users
+                    Lambs
                   </a>
                 </div>
               </li>
@@ -99,7 +99,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
             <div className="items-center sm:flex sm:space-x-4 xl:block xl:space-x-0 2xl:flex 2xl:space-x-4">
               <PictureUploader
                 title="Profile picture"
-                profilePicture={profilePicture}
+                profilePicture={lamb?.profilePicture}
               />
             </div>
           </div>
@@ -134,7 +134,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                         Facebook account
                       </span>
                       <a
-                        href="#"
+                        href="section"
                         className="block truncate text-sm font-normal text-primary-700 hover:underline dark:text-primary-500"
                       >
                         <input
@@ -145,6 +145,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           placeholder=""
                           value={''}
                           required
+                          disabled
                         />
                       </a>
                     </div>
@@ -174,7 +175,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                         Twitter account
                       </span>
                       <a
-                        href="#"
+                        href="section"
                         className="block truncate text-sm font-normal text-primary-700 hover:underline dark:text-primary-500"
                       >
                         <input
@@ -185,6 +186,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           placeholder=""
                           value={''}
                           required
+                          disabled
                         />
                       </a>
                     </div>
@@ -215,6 +217,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           placeholder=""
                           value={''}
                           required
+                          disabled
                         />
                       </span>
                     </div>
@@ -244,17 +247,18 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           placeholder=""
                           value={''}
                           required
+                          disabled
                         />
                       </span>
                     </div>
                   </div>
                 </li>
               </ul>
-              <div>
+              {/* <div>
                 <button className="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                   Save all
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -280,6 +284,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder=""
                     value={lamb?.nickName ?? ''}
                     required
+                    disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -297,6 +302,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="Bonnie"
                     value={lamb?.firstName ?? ''}
                     required
+                    disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -314,6 +320,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="Green"
                     value={lamb?.lastName ?? ''}
                     required
+                    disabled
                   />
                 </div>
 
@@ -332,6 +339,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="e.g. California"
                     value={lamb?.address ?? ''}
                     required
+                    disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -349,6 +357,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="example@company.com"
                     value={lamb?.email ?? ''}
                     required
+                    disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -366,6 +375,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="e.g. +(12)3456 789"
                     value={lamb?.phoneNumber ?? ''}
                     required
+                    disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -383,6 +393,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="15/08/1990"
                     value={lamb?.birthday ?? ''}
                     required
+                    disabled
                   />
                 </div>
 
@@ -401,6 +412,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="Development"
                     value={lamb?.job ?? ''}
                     required
+                    disabled
                   />
                 </div>
 
@@ -411,23 +423,30 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                   >
                     Personality
                   </label>
-                  <select
+                  {/* <select
                     id="personality"
                     name="personality"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
-                    value={lamb?.personality ?? ''}
-                    required
+                    // onChange={e => setSelectedPersonality(e.target.value)}
+										disabled
                   >
-                    <option disabled selected>
-                      Choose a personality
-                    </option>
+                  
                     {Personalities.map(p => (
                       <option key={p.type} value={p.type}>
                         {p.type}
                       </option>
                     ))}
-                  </select>
-                  <p>Selected Value: {lamb?.personality}</p>
+                  </select> */}
+                  <input
+                    type="text"
+                    name="job"
+                    id="job"
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
+                    placeholder="Development"
+                    value={lamb?.persernality ?? ''}
+                    required
+                    disabled
+                  />
                 </div>
 
                 <div className="col-span-6 sm:col-span-3">
@@ -443,19 +462,20 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     name="interesting"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="example เทคโนโลยี,การลงทุน,จิตวิทยา"
-                    value={lamb?.interests ?? ''}
+                    value={lamb?.interesting ?? ''}
                     required
+                    readOnly
                   />
                 </div>
 
-                <div className="sm:col-full col-span-6">
+                {/* <div className="sm:col-full col-span-6">
                   <button
                     className="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                     type="submit"
                   >
                     Save all
                   </button>
-                </div>
+                </div> */}
               </div>
             </form>
           </div>
@@ -550,14 +570,14 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     required
                   />
                 </div>
-                <div className="sm:col-full col-span-6">
+                {/* <div className="sm:col-full col-span-6">
                   <button
                     className="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                     type="submit"
                   >
                     Save all
                   </button>
-                </div>
+                </div> */}
               </div>
             </form>
           </div>
@@ -569,7 +589,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 px-4 xl:grid-cols-2 xl:gap-4">
+      {/* <div className="grid grid-cols-1 px-4 xl:grid-cols-2 xl:gap-4">
         <div className="mb-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6 xl:mb-0">
           <div className="flow-root">
             <h3 className="text-xl font-semibold dark:text-white">
@@ -703,7 +723,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
