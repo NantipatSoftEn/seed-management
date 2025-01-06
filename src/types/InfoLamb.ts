@@ -10,7 +10,6 @@ export interface Lamb {
   phone: string | null
   birthday: string | null
   personality: string | null
-  phoneNumber: string | null
   job: string | null
   interests: string | null
   interesting: string | null

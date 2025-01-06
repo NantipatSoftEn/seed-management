@@ -10,7 +10,6 @@ import ToggleSwitch from '$components/ToggleSwitchR'
 
 export const LambSettings = ({ id }: { id: string | undefined }) => {
   const [lamb, setLamb] = useState<Lamb | null>(null)
-  const [selectedPersonality, setSelectedPersonality] = useState('')
 
   useEffect(() => {
     const fetchLambData = async () => {
@@ -18,8 +17,8 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
       const foundLamb = lambs.find(lamb => lamb.id === Number(id)) || null
       setLamb(foundLamb)
     }
-    console.log('lamb', lamb)
     fetchLambData()
+		console.log('lamb', lamb)
   }, [id])
 
   return (
@@ -368,12 +367,12 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     Phone Number
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     name="phone-number"
                     id="phone-number"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="e.g. +(12)3456 789"
-                    value={lamb?.phoneNumber ?? ''}
+                    value={lamb?.phone ?? ''}
                     required
                     disabled
                   />
@@ -500,6 +499,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="Mentor"
                     value={''}
                     required
+										disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -517,6 +517,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="กลุ่มแคร์"
                     value={lamb?.groupCare ?? ''}
                     required
+										disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -534,6 +535,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     placeholder="Seed Chruch"
                     value={lamb?.previouseChurch ?? ''}
                     required
+										disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -549,8 +551,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     name="number"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Enter a number"
-                    value={lamb?.ageInGod ?? ''}
+                    value={lamb?.age ?? ''}
                     required
+										disabled
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">

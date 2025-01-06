@@ -39,12 +39,12 @@ export default function BlessingStat() {
   return (
     <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg">
       <div className="p-6">
-        <h2 className="text-2xl font-bold text-gray-800">
+        {/* <h2 className="text-2xl font-bold text-gray-800">
           Stat ของประทาน
         </h2>
         <p className="mt-1 text-sm text-gray-600">
           แสดงคะแนนของประทานต่างๆ (คะแนนเต็ม 15)
-        </p>
+        </p> */}
       </div>
       <div className="p-6">
         <div className="h-[800px] w-full">
