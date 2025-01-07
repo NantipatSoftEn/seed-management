@@ -10,12 +10,16 @@ export async function getLambs(): Promise<Lamb[]> {
     throw new Error('DOC_URL environment variable is not defined')
   }
 
-  // const api = new GristDocAPI(docUrl)
-  // const records: IRecord[] = await api.fetchTable('LambInfo_Main')
-  // const subRecords: IRecord[] = await api.fetchTable('GroupCare')
-	// const groupCare: GroupCare[] = subRecords.map(mapRecordToGroupCare)
-  // const lambs: Lamb[] = records.map(record => mapRecordToLamb(record, groupCare))
-  return mockLambs
+  const api = new GristDocAPI(docUrl)
+  const mainRecords: IRecord[] = await api.fetchTable('LambInfo_Main')
+  const groupRecords: IRecord[] = await api.fetchTable('GroupCare')
+	const gifFromGodRecords: IRecord[] = await api.fetchTable('GiftFromGod')
+	console.log('gifFromGodRecords', gifFromGodRecords)
+	const groupCare: GroupCare[] = groupRecords.map(mapRecordToGroupCare)
+  const lambs: Lamb[] = mainRecords.map(record => mapRecordToLamb(record, groupCare))
+	return lambs
+  // return mockLambsconsole.log('getLambs')
+
 }
 
 const getNameGroupCare = (groupCare: GroupCare[], id: number | null): string | null => {
@@ -45,7 +49,6 @@ function mapRecordToLamb(record: IRecord,groupCare:GroupCare[]): Lamb {
     email: getString(record.email),
     phone: getString(record.phone),
     personality: getString(record.personality),
-    phoneNumber: getString(record.phoneNumber),
     job: getString(record.job),
     interests: getString(record.interests),
     persernality: getString(record.persernality),
