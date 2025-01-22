@@ -22,25 +22,8 @@ export interface Lamb {
   ageInGod: number | null
   remark: string | null
   previouseChurch: string | null
-  gift: string | null
+  gift: GiftFromGod | null
   profilePicture: string | null
-}
-
-// Interface for the SocialAccounts table
-interface SocialAccounts {
-  facebook: string | null
-  line: string | null
-  instagram: string | null
-  twitter: string | null
-}
-
-// Interface for the ReligiousInfo table
-interface ReligiousInfo {
-  mentor: string | null
-  groupCare: string | null
-  previousChurch: string | null
-  age: number | null // DECIMAL(10, 2) could be a number
-  remark: string | null
 }
 
 export interface GroupCare {
@@ -48,4 +31,37 @@ export interface GroupCare {
   name: string | null
   des: string | null
   day: string | null
+}
+
+export interface GiftFromGod {
+  id: number | null;
+  manualSort: number | null;
+  lambId: number | null;
+  Pastoral: number | null;
+  Teaching: number | null;
+  WordContainerIntelligence: number | null;
+  WarningAndEncouragement: number | null;
+  ObservationOfSpirits: number | null;
+  Donation: number | null;
+  Pampering: number | null;
+  Compassion: number | null;
+  Missionary: number | null;
+  Announcer: number | null;
+  GuestReception: number | null;
+  belief: number | null;
+  Owner: number | null;
+  Executive: number | null;
+  Miracle: number | null;
+  TreatmentOfDisease: number | null;
+  SpeakingInStrangeLanguages: number | null;
+  Ambassador: number | null;
+  BeingSingle: number | null;
+  PrayerOfSupplication: number | null;
+  Exorcism: number | null;
+  Benefactor: number | null;
+  Prophecy: number | null;
+  Status: string | null;
+  StrangelanguageTranslation: number | null;
+  WordContainKnowledge_: number | null;
+  gristHelper_Display: string | null;
 }

@@ -448,7 +448,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
               id="phone-number"
               class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
               placeholder="e.g. +(12)3456 789"
-              value={lamb?.phoneNumber}
+              value={lamb?.phone}
               required
             />
           </div>
@@ -649,7 +649,7 @@ const profilePicture = `/persons/${lamb?.profilePicture}`
       <h3 class="mb-4 text-xl font-semibold dark:text-white">
         Stat ของประทานฝ่ายวิญญาณ
       </h3>
-      <BlessingStat client:only="react" />
+      <BlessingStat score={lamb?.gift} client:only="react" />
     </div>
 
     <!-- <div

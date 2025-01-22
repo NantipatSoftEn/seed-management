@@ -142,9 +142,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           id="facebook"
                           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                           placeholder=""
-                          value={''}
+                          defaultValue={''}
                           required
-                          disabled
+                          readOnly
                         />
                       </a>
                     </div>
@@ -183,9 +183,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           id="tacebook"
                           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                           placeholder=""
-                          value={''}
+                          defaultValue={''}
                           required
-                          disabled
+                          readOnly
                         />
                       </a>
                     </div>
@@ -214,9 +214,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           id="line"
                           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                           placeholder=""
-                          value={''}
+                          defaultValue={''}
                           required
-                          disabled
+                          readOnly
                         />
                       </span>
                     </div>
@@ -244,9 +244,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                           id="ig"
                           className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                           placeholder=""
-                          value={''}
+                          defaultValue={''}
                           required
-                          disabled
+                          readOnly
                         />
                       </span>
                     </div>
@@ -281,9 +281,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="nick-name"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder=""
-                    value={lamb?.nickName ?? ''}
+                    defaultValue={lamb?.nickName ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -299,9 +299,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="first-name"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Bonnie"
-                    value={lamb?.firstName ?? ''}
+                    defaultValue={lamb?.firstName ?? ''}
                     required
-                    disabled
+                    
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -317,9 +317,8 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="last-name"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Green"
-                    value={lamb?.lastName ?? ''}
+                    defaultValue={lamb?.lastName ?? ''}
                     required
-                    disabled
                   />
                 </div>
 
@@ -336,9 +335,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="address"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="e.g. California"
-                    value={lamb?.address ?? ''}
+                    defaultValue={lamb?.address ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -354,9 +353,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="email"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="example@company.com"
-                    value={lamb?.email ?? ''}
+                    defaultValue={lamb?.email ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -372,9 +371,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="phone-number"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="e.g. +(12)3456 789"
-                    value={lamb?.phone ?? ''}
+                    defaultValue={lamb?.phone ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -390,9 +389,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="birthday"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="15/08/1990"
-                    value={lamb?.birthday ?? ''}
+                    defaultValue={lamb?.birthday ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
 
@@ -409,9 +408,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="job"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Development"
-                    value={lamb?.job ?? ''}
+                    defaultValue={lamb?.job ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
 
@@ -426,12 +425,12 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="personality"
                     name="personality"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
-                    // onChange={e => setSelectedPersonality(e.target.value)}
-										disabled
+                    // onChange={e => setSelectedPersonality(e.target.defaultValue)}
+										readOnly
                   >
                   
                     {Personalities.map(p => (
-                      <option key={p.type} value={p.type}>
+                      <option key={p.type} defaultValue={p.type}>
                         {p.type}
                       </option>
                     ))}
@@ -442,9 +441,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="job"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Development"
-                    value={lamb?.persernality ?? ''}
+                    defaultValue={lamb?.persernality ?? ''}
                     required
-                    disabled
+                    readOnly
                   />
                 </div>
 
@@ -461,7 +460,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     name="interesting"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="example เทคโนโลยี,การลงทุน,จิตวิทยา"
-                    value={lamb?.interesting ?? ''}
+                    defaultValue={lamb?.interesting ?? ''}
                     required
                     readOnly
                   />
@@ -497,9 +496,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="mentor"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Mentor"
-                    value={''}
+                    defaultValue={''}
                     required
-										disabled
+										readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -515,9 +514,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="groupcare"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="กลุ่มแคร์"
-                    value={lamb?.groupCare ?? ''}
+                    defaultValue={lamb?.groupCare ?? ''}
                     required
-										disabled
+										readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -533,9 +532,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     id="previous-chruch"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Seed Chruch"
-                    value={lamb?.previouseChurch ?? ''}
+                    defaultValue={lamb?.previouseChurch ?? ''}
                     required
-										disabled
+										readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -551,9 +550,9 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     name="number"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="Enter a number"
-                    value={lamb?.age ?? ''}
+                    defaultValue={lamb?.age ?? ''}
                     required
-										disabled
+										readOnly
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">
@@ -569,7 +568,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
                     name="remark"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm"
                     placeholder="บอกเล่าสถานการณ์"
-                    value={lamb?.remark ?? ''}
+                    defaultValue={lamb?.remark ?? ''}
                     required
                   />
                 </div>
@@ -588,7 +587,7 @@ export const LambSettings = ({ id }: { id: string | undefined }) => {
             <h3 className="mb-4 text-xl font-semibold dark:text-white">
               Stat ของประทานฝ่ายวิญญาณ
             </h3>
-            <BlessingStat />
+            <BlessingStat score={lamb?.gift}/>
           </div>
         </div>
       </div>

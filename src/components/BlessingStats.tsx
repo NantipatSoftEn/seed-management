@@ -6,6 +6,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts'
+import type { GiftFromGod } from 'src/types/InfoLamb'
 
 const blessingData = [
   { name: 'เผยพระวจนะ', score: 10 },
@@ -35,7 +36,8 @@ const blessingData = [
   { name: 'ผู้อุปการะ', score: 9 },
 ]
 
-export default function BlessingStat() {
+export default function BlessingStat({ score }: { readonly score: GiftFromGod | null | undefined  }) {
+	console.log('blessings', score)
   return (
     <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg">
       <div className="p-6">
