@@ -48,7 +48,7 @@ export interface GiftFromGod {
   Missionary: number | null;
   Announcer: number | null;
   GuestReception: number | null;
-  belief: number | null;
+  Belief: number | null;
   Owner: number | null;
   Executive: number | null;
   Miracle: number | null;
@@ -62,6 +62,6 @@ export interface GiftFromGod {
   Prophecy: number | null;
   Status: string | null;
   StrangelanguageTranslation: number | null;
-  WordContainKnowledge_: number | null;
+  WordContainKnowledge: number | null;
   gristHelper_Display: string | null;
 }

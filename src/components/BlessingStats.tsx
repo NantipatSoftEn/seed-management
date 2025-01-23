@@ -8,36 +8,49 @@ import {
 } from 'recharts'
 import type { GiftFromGod } from 'src/types/InfoLamb'
 
-const blessingData = [
-  { name: 'เผยพระวจนะ', score: 10 },
-  { name: 'อภิบาล', score: 2 },
-  { name: 'การสอน', score: 3 },
-  { name: 'ถ้อยคำประกอบด้วยสติปัญญา', score: 15 },
-  { name: 'ถ้อยคำประกอบด้วยความรู้', score: 7 },
-  { name: 'การตักเตือนและหนุนใจ', score: 6 },
-  { name: 'การรับใช้วิญญาณ', score: 3 },
-  { name: 'การบริจาค', score: 2 },
-  { name: 'การประนีประนอม', score: 9 },
-  { name: 'ความเมตตา', score: 10 },
-  { name: 'มีชัยชนะ', score: 8 },
-  { name: 'ผู้ประกาศ', score: 4 },
-  { name: 'การรับรองแขก', score: 3 },
-  { name: 'ความเชื่อ', score: 1 },
-  { name: 'ผู้ครอบครอง', score: 8 },
-  { name: 'ผู้บริหาร', score: 9 },
-  { name: 'การอัศจรรย์', score: 7 },
-  { name: 'การรักษาโรค', score: 10 },
-  { name: 'การพูดภาษาแปลก', score: 11 },
-  { name: 'การแปลภาษาแปลก', score: 9 },
-  { name: 'อัครทูต', score: 6 },
-  { name: 'การอยู่เป็นโสด', score: 2 },
-  { name: 'การอธิษฐานอ้อนวอน', score: 3 },
-  { name: 'การช่วยเหลือ', score: 4 },
-  { name: 'ผู้อุปการะ', score: 9 },
-]
+ const BlessingStatData = [
+  { thaiName: 'เผยพระวจนะ', score: 0, englishName: 'Prophecy' },
+  { thaiName: 'อภิบาล', score: 0, englishName: 'Pastoral' },
+  { thaiName: 'การสอน', score: 0, englishName: 'Teaching' },
+  { thaiName: 'ถ้อยคำประกอบด้วยสติปัญญา', score: 0, englishName: 'WordContainerIntelligence' },
+  { thaiName: 'ถ้อยคำประกอบด้วยความรู้', score: 0, englishName: 'WordContainKnowledge' },
+  { thaiName: 'การตักเตือนและหนุนใจ', score: 0, englishName: 'WarningAndEncouragement' },
+  { thaiName: 'การรับใช้วิญญาณ', score: 0, englishName: 'ObservationOfSpirits' },
+  { thaiName: 'การบริจาค', score: 0, englishName: 'Donation' },
+  { thaiName: 'การประนีประนอม', score: 0, englishName: 'Pampering' },
+  { thaiName: 'ความเมตตา', score: 0, englishName: 'Compassion' },
+  { thaiName: 'มีชัยชนะ', score: 0, englishName: 'Missionary' },
+  { thaiName: 'ผู้ประกาศ', score: 0, englishName: 'Announcer' },
+  { thaiName: 'การรับรองแขก', score: 0, englishName: 'GuestReception' },
+  { thaiName: 'ความเชื่อ', score: 0, englishName: 'Belief' },
+  { thaiName: 'ผู้ครอบครอง', score: 0, englishName: 'Owner' },
+  { thaiName: 'ผู้บริหาร', score: 0, englishName: 'Executive' },
+  { thaiName: 'การอัศจรรย์', score: 0, englishName: 'Miracle' },
+  { thaiName: 'การรักษาโรค', score: 0, englishName: 'TreatmentOfDisease' },
+  { thaiName: 'การพูดภาษาแปลก', score: 0, englishName: 'SpeakingInStrangeLanguages' },
+  { thaiName: 'การแปลภาษาแปลก', score: 0, englishName: 'TranslationOfStrangeLanguages' },
+  { thaiName: 'อัครทูต', score: 0, englishName: 'Ambassador' },
+  { thaiName: 'การอยู่เป็นโสด', score: 0, englishName: 'BeingSingle' },
+  { thaiName: 'การอธิษฐานอ้อนวอน', score: 0, englishName: 'PrayerOfSupplication' },
+  { thaiName: 'การช่วยเหลือ', score: 0, englishName: 'Exorcism' },
+  { thaiName: 'ผู้อุปการะ', score: 0, englishName: 'Benefactor' },
+];
+
+
 
 export default function BlessingStat({ score }: { readonly score: GiftFromGod | null | undefined  }) {
+	const updateBlessingData = (blessingData: any[], score: GiftFromGod | null | undefined  ) => {
+		for (const blessing of blessingData) {
+			const key = blessing.englishName as keyof GiftFromGod
+      blessing.score = score ? (score[key] as number) : 0
+			blessing.name = blessing.thaiName
+		}
+		return blessingData
+	}	
+
+	const BlessingData = updateBlessingData(BlessingStatData, score)
 	console.log('blessings', score)
+	console.log("BlessingData", BlessingData)
   return (
     <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg">
       <div className="p-6">
@@ -52,7 +65,7 @@ export default function BlessingStat({ score }: { readonly score: GiftFromGod | 
         <div className="h-[800px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
-              data={blessingData}
+              data={BlessingData}
               layout="vertical"
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >

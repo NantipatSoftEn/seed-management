@@ -102,7 +102,7 @@ function getGiftFromGod(data: any): GiftFromGod {
     Missionary: getNumber(data.Missionary),
     Announcer: getNumber(data.Announcer),
     GuestReception: getNumber(data.GuestReception),
-    belief: getNumber(data.belief),
+    Belief: getNumber(data.Belief),
     Owner: getNumber(data.Owner),
     Executive: getNumber(data.Executive),
     Miracle: getNumber(data.Miracle),
@@ -116,7 +116,7 @@ function getGiftFromGod(data: any): GiftFromGod {
     Prophecy: getNumber(data.Prophecy),
     Status: getString(data.Status),
     StrangelanguageTranslation: getNumber(data.StrangelanguageTranslation),
-    WordContainKnowledge_: getNumber(data.WordContainKnowledge_),
+    WordContainKnowledge: getNumber(data.WordContainKnowledge),
     gristHelper_Display: getString(data.gristHelper_Display),
   };
   return gift;
